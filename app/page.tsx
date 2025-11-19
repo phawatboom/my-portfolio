@@ -1,101 +1,104 @@
-import Image from "next/image";
+// src/app/page.tsx
+import type { Metadata } from "next";
+import Link from "next/link";
+import { projects } from "../data/projects";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Phawat | Portfolio",
+  description: "Finance and Computer Science student building data driven products.",
+};
+
+export default function HomePage() {
+  const highlightedProjects = projects.filter((p) => p.highlight).slice(0, 3);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="max-w-5xl mx-auto">
+      {/* Hero */}
+      <header className="flex flex-col items-start justify-center py-16 gap-4">
+        <p className="text-sm uppercase tracking-wide text-gray-500">
+          Finance × Computer Science
+        </p>
+        <h2 className="text-4xl md:text-5xl font-extrabold">
+          Hello, I&apos;m Phawat.
+        </h2>
+        <p className="text-lg text-gray-700 max-w-2xl">
+          I build data driven tools at the intersection of software engineering
+          and finance, from trading algorithms to valuation dashboards and skills
+          intelligence systems.
+        </p>
+        <div className="flex flex-wrap gap-3 mt-4">
+          <Link
+            href="/projects"
+            className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            View projects
+          </Link>
+          <Link
+            href="/contact"
+            className="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:bg-gray-100"
           >
-            Read our docs
-          </a>
+            Contact me
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </header>
+
+      {/* About snapshot */}
+      <section className="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h3 className="text-2xl font-semibold mb-3">About me</h3>
+        <p className="text-gray-700">
+          I am a final year student studying Finance and Computer Science. I enjoy
+          building systems that combine quantitative thinking, clean software
+          design, and real world impact, such as trading bots, valuation tools,
+          and platforms that help people make better career decisions.
+        </p>
+      </section>
+
+      {/* Highlighted projects */}
+      <section className="bg-white shadow-md rounded-xl p-6 mb-8">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-2xl font-semibold">Highlighted projects</h3>
+          <Link href="/projects" className="text-sm text-blue-600 underline">
+            View all projects
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {highlightedProjects.map((project) => (
+            <article
+              key={project.slug}
+              className="p-4 border rounded-lg shadow-sm flex flex-col"
+            >
+              <h4 className="text-xl font-semibold mb-1">{project.title}</h4>
+              <p className="text-sm text-gray-600 mb-2">
+                {project.descriptionShort}
+              </p>
+              <p className="text-xs text-gray-500 mb-3">
+                {project.techStack.join(" · ")}
+              </p>
+              <div className="mt-auto flex items-center justify-between">
+                <span className="text-xs text-gray-500">{project.year}</span>
+                <Link
+                  href="/projects"
+                  className="text-sm text-blue-600 underline"
+                >
+                  More details
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact teaser */}
+      <section className="bg-white shadow-md rounded-xl p-6">
+        <h3 className="text-2xl font-semibold mb-3">Let&apos;s talk</h3>
+        <p className="text-gray-700 mb-3">
+          I am open to roles in quantitative research, data analytics, software
+          engineering, and product roles that combine finance and technology.
+        </p>
+        <Link href="/contact" className="text-sm text-blue-600 underline">
+          Go to contact page
+        </Link>
+      </section>
     </div>
   );
 }
