@@ -44,6 +44,9 @@ export default function RootLayout({
             <Link href="/contact" className="text-lg hover:text-blue-500">
               Contact
             </Link>
+            <Link href="/resources" className="text-lg hover:text-blue-500">
+              Resources
+            </Link>
           </div>
         </nav>
 
