@@ -214,7 +214,7 @@ export default function ResourcesPage() {
                     href={link.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-blue-600 underline"
+                    className="text-amber-700 underline hover:text-amber-500"
                   >
                     {link.label}
                   </a>

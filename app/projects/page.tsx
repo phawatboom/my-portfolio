@@ -31,7 +31,7 @@ export default function ProjectsPage() {
             </p>
             <Link
               href={`/projects/${project.slug}`}
-              className="text-sm text-blue-600 underline mt-auto"
+              className="text-sm text-amber-600 underline mt-auto hover:text-amber-600"
             >
               View details
             </Link>

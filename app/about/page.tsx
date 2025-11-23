@@ -8,23 +8,115 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-extrabold mb-6">About me</h1>
-      <p className="text-lg text-gray-700 mb-4">
-        I am a developer with a passion for solving real-world problems through
-        technology and finance. My work focuses on building systems that combine
-        data, markets, and software engineering to create practical tools.
-      </p>
-      <p className="text-lg text-gray-700 mb-4">
-        I study Finance and Computer Science and have worked on projects ranging
-        from algorithmic trading and portfolio analytics to web applications,
-        valuation dashboards, and AI-powered career tools.
-      </p>
-      <p className="text-lg text-gray-700">
-        Outside of academics and projects, I enjoy learning about markets,
-        experimenting with new technologies, and collaborating on meaningful
-        products with teammates.
-      </p>
+    <div className="max-w-4xl mx-auto py-12">
+      <h1 className="text-4xl font-extrabold mb-8">About me</h1>
+      <section className="space-y-6 text-lg leading-relaxed text-gray-700">
+        <p>
+          I am a final year Finance and Computer Science student at the
+          University of Auckland, building a career at the intersection of
+          software engineering, applied machine learning, and financial
+          analysis. My long term goal is to rise in the business and technology
+          world and use AI and data to build solutions that society genuinely
+          needs, especially those that help reduce inequality and improve
+          access to basic needs.
+        </p>
+
+        <p>
+          I enjoy taking ideas from concept to production, from data modelling
+          and machine learning pipelines through to full stack web
+          applications. I have built systems such as:
+        </p>
+        <ul className="list-disc list-inside text-base text-gray-700 space-y-2 pl-4">
+          <li>
+            An algorithmic trading framework that combines EMA and MACD signals
+            with RSI divergence and risk controls.
+          </li>
+          <li>
+            A quantitative forecasting platform that classifies stock movements
+            into mean reversion or momentum and visualises multi horizon
+            forecasts in a Next.js dashboard.
+          </li>
+          <li>
+            Worklaunch, an AI powered career recommender that maps resume text
+            to more than 13,000 ESCO occupations using embeddings, semantic
+            search, and skill graphs.
+          </li>
+        </ul>
+        <p>
+          These projects reflect how I like to work: rigorous in the data and
+          modelling, practical in the engineering, and focused on real decision
+          making value for users.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10">How I learn and work</h2>
+        <p>
+          University has given me a strong foundation, but as my skills have
+          grown I have increasingly looked beyond the classroom. I actively
+          learn by:
+        </p>
+        <ul className="list-disc list-inside text-base text-gray-700 space-y-2 pl-4">
+          <li>
+            Building end to end projects in Python, React, Next.js, Django,
+            SQL, and cloud platforms such as AWS and GCP.
+          </li>
+          <li>
+            Attending club events, technical workshops, and case competitions
+            to stress test my thinking against real business problems.
+          </li>
+          <li>
+            Diving into trending GitHub repositories, AI and ML tools, and
+            financial news to stay close to what practitioners are actually
+            using.
+          </li>
+        </ul>
+        <p>
+          This mix of formal study and self driven learning has helped me
+          become adaptable, comfortable with ambiguity, and able to move
+          quickly from theory to implementation.
+        </p>
+
+        <p>
+          As Tech Lead for the AUCC website project, I lead a team of
+          developers and a designer to ship a production grade site using
+          Next.js, Payload CMS, and PostgreSQL. I review pull requests, guide
+          architectural decisions, and balance delivery with maintainability.
+          Previously, as a Finance and Governance Executive at AIESEC in
+          Auckland City, I liaised with sponsors, prepared monthly reports, and
+          supported events, which strengthened my communication skills and
+          stakeholder awareness.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10">What I want to build</h2>
+        <p>
+          I am particularly interested in roles such as AI and ML Engineer,
+          Software Engineer or Full Stack Developer, and Quantitative or
+          FinTech Analyst. My focus is on building AI systems that are
+          technically robust and commercially grounded, and that over time can
+          help narrow the gap between those who benefit from technology and
+          those who are left behind.
+        </p>
+        <p>
+          I am committed to building a long term career in New Zealand, ideally
+          within reputable organisations that invest in innovation and people.
+          My aim is to contribute to the local tech and finance ecosystem, grow
+          into a senior technical and product role, and support New Zealand&apos;s
+          broader economic and social resilience.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10">Beyond work</h2>
+        <p>
+          Outside of projects and study, I enjoy spending time with friends and
+          exercising, exploring new technologies, reading financial and macro
+          news, and browsing platforms like GitHub and Seeking Alpha. I also
+          like to relax with YouTube and Netflix and think about new product
+          ideas that could one day become real ventures.
+        </p>
+        <p>
+          I am always open to opportunities where I can learn from experienced
+          engineers, data scientists, and business leaders, while contributing
+          meaningfully from day one.
+        </p>
+      </section>
     </div>
   );
 }

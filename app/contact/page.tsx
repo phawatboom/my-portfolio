@@ -18,10 +18,10 @@ export default function ContactPage() {
         Email is usually the fastest way to reach me.
       </p>
       <a
-        href="mailto:your.email@example.com"
-        className="inline-block text-blue-600 underline text-lg"
+        href="mailto:pboomhtsaengs3@gmail.com"
+        className="inline-block text-amber-600 underline text-lg hover:text-amber-600"
       >
-        your.email@example.com
+        pboomhtsaengs3@gmail.com
       </a>
     </div>
   );

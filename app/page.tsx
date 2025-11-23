@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <div className="max-w-5xl mx-auto">
       {/* Hero */}
-      <header className="flex flex-col items-start justify-center py-16 gap-4">
+      <header className="flex flex-col items-start justify-center py-12 gap-4">
         <p className="text-sm uppercase tracking-wide text-gray-500">
           Finance × Computer Science
         </p>
@@ -29,15 +29,9 @@ export default function HomePage() {
         <div className="flex flex-wrap gap-3 mt-4">
           <Link
             href="/projects"
-            className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700"
+            className="px-4 py-2 rounded-lg bg-amber-300 text-gray-900 text-sm font-medium hover:bg-amber-400 hover:shadow-sm transition-colors"
           >
             View projects
-          </Link>
-          <Link
-            href="/contact"
-            className="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:bg-gray-100"
-          >
-            Contact me
           </Link>
         </div>
       </header>
@@ -55,13 +49,10 @@ export default function HomePage() {
 
       {/* Highlighted projects */}
       <section className="bg-white shadow-md rounded-xl p-6 mb-8">
-        <div className="flex items-center justify-between mb-4">
+        <div className="mb-4">
           <h3 className="text-2xl font-semibold">Highlighted projects</h3>
-          <Link href="/projects" className="text-sm text-blue-600 underline">
-            View all projects
-          </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
           {highlightedProjects.map((project) => (
             <article
               key={project.slug}
@@ -77,14 +68,22 @@ export default function HomePage() {
               <div className="mt-auto flex items-center justify-between">
                 <span className="text-xs text-gray-500">{project.year}</span>
                 <Link
-                  href="/projects"
-                  className="text-sm text-blue-600 underline"
+                  href={`/projects/${project.slug}`}
+                  className="text-sm text-amber-600 underline hover:text-amber-500"
                 >
-                  More details
+                  View project
                 </Link>
               </div>
             </article>
           ))}
+        </div>
+        <div className="flex justify-end">
+          <Link
+            href="/projects"
+            className="text-sm text-black underline"
+          >
+            View all projects
+          </Link>
         </div>
       </section>
 
@@ -95,7 +94,10 @@ export default function HomePage() {
           I am open to roles in quantitative research, data analytics, software
           engineering, and product roles that combine finance and technology.
         </p>
-        <Link href="/contact" className="text-sm text-blue-600 underline">
+        <Link
+          href="/contact"
+          className="text-sm text-amber-600 underline hover:text-amber-600"
+        >
           Go to contact page
         </Link>
       </section>
