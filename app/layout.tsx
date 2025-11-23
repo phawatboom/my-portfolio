@@ -29,9 +29,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 text-gray-900`}
       >
         {/* Navigation */}
-        <nav className="p-5 bg-white shadow-md flex justify-between items-center">
-          <h1 className="text-2xl font-bold">My Portfolio</h1>
-          <div className="space-x-4">
+        <nav className="p-5 bg-white shadow-md">
+          <div className="max-w-5xl mx-auto flex justify-between items-center">
+            <h1 className="text-2xl font-bold">My Portfolio</h1>
+            <div className="space-x-4">
             <Link href="/" className="text-lg hover:text-blue-500">
               Home
             </Link>
@@ -44,14 +45,17 @@ export default function RootLayout({
             <Link href="/contact" className="text-lg hover:text-blue-500">
               Contact
             </Link>
-            <Link href="/resources" className="text-lg hover:text-blue-500">
-              Resources
-            </Link>
+              <Link href="/resources" className="text-lg hover:text-blue-500">
+                Resources
+              </Link>
+            </div>
           </div>
         </nav>
 
         {/* Main Content */}
-        <main className="p-10">{children}</main>
+        <main className="p-10">
+          <div className="max-w-5xl mx-auto">{children}</div>
+        </main>
 
         {/* Footer */}
         <footer className="text-center py-5 bg-gray-800 text-white">
