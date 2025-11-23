@@ -3,18 +3,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 
-type ProjectPageProps = {
-  params: {
-    slug: string;
-  };
-};
-
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-export function generateMetadata({ params }: ProjectPageProps): Metadata {
-  const project = projects.find((p) => p.slug === params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return {
@@ -28,8 +27,13 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
   };
 }
 
-export default function ProjectDetailPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     notFound();
@@ -37,7 +41,10 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <Link href="/projects" className="text-sm text-blue-600 underline">
+      <Link
+        href="/projects"
+        className="text-sm text-amber-500 underline hover:text-amber-600"
+      >
         ← Back to projects
       </Link>
 
@@ -68,7 +75,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
       <section className="mb-6">
         <h2 className="text-lg font-semibold mb-2">Links</h2>
-        <ul className="list-disc list-inside text-sm text-blue-600">
+        <ul className="list-disc list-inside text-sm text-amber-600">
           {project.links.github && (
             <li>
               <a
