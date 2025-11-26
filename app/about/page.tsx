@@ -86,6 +86,45 @@ export default function AboutPage() {
           stakeholder awareness.
         </p>
 
+        <h2 className="text-2xl font-semibold mt-10">Life OS</h2>
+        <p className="mb-6">
+          A glimpse into the systems and routines that keep me energized and
+          growing outside of work.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {lifeAspects.map((aspect) => (
+            <div
+              key={aspect.id}
+              className="p-5 border rounded-lg shadow-sm bg-white"
+            >
+              <h3 className="text-xl font-semibold mb-2">{aspect.title}</h3>
+              <p className="text-sm text-gray-700 mb-3">{aspect.oneLiner}</p>
+              {aspect.routines && (
+                <ul className="list-disc list-inside text-sm text-gray-600 mb-3">
+                  {aspect.routines.map((r, i) => (
+                    <li key={i}>{r}</li>
+                  ))}
+                </ul>
+              )}
+              {aspect.keyLinks && (
+                <div className="flex flex-wrap gap-2">
+                  {aspect.keyLinks.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs text-amber-600 underline hover:text-amber-500"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
         <h2 className="text-2xl font-semibold mt-10">What I want to build</h2>
         <p>
           I am particularly interested in roles such as AI and ML Engineer,
@@ -103,20 +142,57 @@ export default function AboutPage() {
           broader economic and social resilience.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10">Beyond work</h2>
-        <p>
-          Outside of projects and study, I enjoy spending time with friends and
-          exercising, exploring new technologies, reading financial and macro
-          news, and browsing platforms like GitHub and Seeking Alpha. I also
-          like to relax with YouTube and Netflix and think about new product
-          ideas that could one day become real ventures.
-        </p>
-        <p>
-          I am always open to opportunities where I can learn from experienced
-          engineers, data scientists, and business leaders, while contributing
-          meaningfully from day one.
+        <p className="mt-8 pt-8 border-t text-gray-600 text-sm">
+          For roles in AI, software, or trading, reach me at{" "}
+          <a
+            href="mailto:pboomhtsaengs3@gmail.com"
+            className="text-amber-600 underline hover:text-amber-500"
+          >
+            pboomhtsaengs3@gmail.com
+          </a>
+          .
         </p>
       </section>
     </div>
   );
 }
+
+type LifeAspectId =
+  | "health"
+  | "relationships"
+  | "food"
+  | "explore"
+  | "investing"
+  | "roadmap";
+
+type LifeAspect = {
+  id: LifeAspectId;
+  title: string;
+  oneLiner: string;
+  routines?: string[];
+  keyLinks?: { label: string; href: string }[];
+};
+
+const lifeAspects: LifeAspect[] = [
+  {
+    id: "health",
+    title: "Health and training",
+    oneLiner: "Weight training and paddling to keep energy high for deep work.",
+    routines: ["Gym 3–4 times per week", "Canoeing with AUCC"],
+    keyLinks: [{ label: "AUCC", href: "https://www.aucc.org.nz/" }],
+  },
+  {
+    id: "food",
+    title: "Cooking and food",
+    oneLiner: "Trying to turn simple ingredients into high protein meals.",
+    keyLinks: [],
+  },
+  {
+    id: "investing",
+    title: "Investing & Markets",
+    oneLiner: "Following macro trends and analyzing companies.",
+    routines: ["Daily market news", "Seeking Alpha analysis"],
+    keyLinks: [],
+  },
+];
+

@@ -14,6 +14,7 @@ export type Project = {
   tags: string[];
   impact: string;
   highlight: boolean; // true = show on home page
+  relatedCourses?: string[]; // e.g. ["COMPSCI 335", "FINANCE 251"]
   links: {
     github?: string;
     demo?: string;
@@ -35,6 +36,7 @@ export const projects: Project[] = [
     impact:
       "Helped users identify potential mispricings by surfacing mean reversion probabilities and beta trends.",
     highlight: true,
+    relatedCourses: ["FINANCE 361", "COMPSCI 361"],
     links: {
       github: "https://github.com/phawatboom/capital-compass",
     },
@@ -52,6 +54,7 @@ export const projects: Project[] = [
     impact:
       "Gives users structured career suggestions and concrete skill gaps instead of generic job matches.",
     highlight: true,
+    relatedCourses: ["COMPSCI 361"],
     links: {
       github: "https://github.com/phawatboom/worklaunch",
     },
@@ -69,6 +72,7 @@ export const projects: Project[] = [
     impact:
       "Reduced manual website updates and made it easier to promote trips and events to members.",
     highlight: true,
+    relatedCourses: ["COMPSCI 335"],
     links: {
       github: "https://github.com/phawatboom/aucc-website",
     },
@@ -86,6 +90,7 @@ export const projects: Project[] = [
     impact:
       "Improved PnL and stability across products by combining simple signals with risk controls.",
     highlight: false,
+    relatedCourses: ["FINANCE 351"],
     links: {},
   },
   {
@@ -117,6 +122,7 @@ export const projects: Project[] = [
     longDescription:
       "Kitchen Intelligence is an end-to-end AI-driven household meal planning system designed to make weekly food planning simple, healthy, cost-efficient, and personalised. It combines deterministic optimisation, nutritional modelling, and LLM-powered assistants to generate realistic plans that households can actually cook. The planner builds lunch and dinner plans around a household’s preferences, equipment, location, and budget, using real ingredient prices to estimate cost per meal and weekly totals. Each recipe is scored for calories, protein, and macro balance, and tagged with labels like high protein or low carb so users can quickly understand the health trade-offs. On top of the structured planner, an LLM layer explains plan choices in friendly language, adapts recipes on request (for example vegetarian, microwave-only, or lower-cost versions), and can suggest similar substitutions when users want to swap meals. A dedicated cook mode then walks users through recipes step by step on desktop or mobile, so the system covers the full journey from planning to cooking.",
     highlight: true,
+    relatedCourses: ["COMPSCI 335", "COMPSCI 361"],
     links: {
       github: "https://github.com/phawatboom/kitchen-intelligence",
     },

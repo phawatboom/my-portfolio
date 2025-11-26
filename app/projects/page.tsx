@@ -29,6 +29,11 @@ export default function ProjectsPage() {
             <p className="text-xs text-gray-500 mb-3">
               {project.techStack.join(" · ")}
             </p>
+            {project.relatedCourses && project.relatedCourses.length > 0 && (
+              <p className="text-xs text-gray-500 mb-3">
+                Based on: {project.relatedCourses.join(", ")}
+              </p>
+            )}
             <Link
               href={`/projects/${project.slug}`}
               className="text-sm text-amber-600 underline mt-auto hover:text-amber-600"

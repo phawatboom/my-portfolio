@@ -66,6 +66,11 @@ export default async function ProjectDetailPage({
       <section className="mb-6">
         <h2 className="text-lg font-semibold mb-2">Tech stack</h2>
         <p className="text-gray-700 text-sm">{project.techStack.join(" · ")}</p>
+        {project.relatedCourses && project.relatedCourses.length > 0 && (
+          <p className="text-xs text-gray-500 mt-2">
+            Based on: {project.relatedCourses.join(", ")}
+          </p>
+        )}
       </section>
 
       <section className="mb-6">

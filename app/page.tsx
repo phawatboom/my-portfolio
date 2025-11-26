@@ -65,6 +65,11 @@ export default function HomePage() {
               <p className="text-xs text-gray-500 mb-3">
                 {project.techStack.join(" · ")}
               </p>
+              {project.relatedCourses && project.relatedCourses.length > 0 && (
+                <p className="text-xs text-gray-500 mb-3">
+                  Based on: {project.relatedCourses.join(", ")}
+                </p>
+              )}
               <div className="mt-auto flex items-center justify-between">
                 <span className="text-xs text-gray-500">{project.year}</span>
                 <Link
