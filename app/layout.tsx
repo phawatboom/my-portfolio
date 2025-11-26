@@ -45,8 +45,8 @@ export default function RootLayout({
                 <Link href="/projects" className="text-lg hover:text-blue-500">
                   Projects
                 </Link>
-                <Link href="/contact" className="text-lg hover:text-blue-500">
-                  Contact
+                <Link href="/courses" className="text-lg hover:text-blue-500">
+                  Courses
                 </Link>
                 <Link href="/resources" className="text-lg hover:text-blue-500">
                   Resources
@@ -56,6 +56,22 @@ export default function RootLayout({
 
             {/* Social icons on the right */}
             <div className="flex items-center space-x-4">
+              <a
+                href="mailto:pboomhtsaengs3@gmail.com"
+                aria-label="Email Phawat"
+                className="text-gray-700 hover:text-blue-500"
+              >
+                {/* simple envelope icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path d="M4 6h16v12H4z" />
+                  <path d="M4 6l8 7 8-7" />
+                </svg>
+              </a>
               <a
                 href="https://github.com/phawatboom"
                 target="_blank"

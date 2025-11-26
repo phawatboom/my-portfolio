@@ -95,10 +95,10 @@ export default function HomePage() {
           engineering, and product roles that combine finance and technology.
         </p>
         <Link
-          href="/contact"
+          href="mailto:pboomhtsaengs3@gmail.com"
           className="text-sm text-amber-600 underline hover:text-amber-600"
         >
-          Go to contact page
+          Email me
         </Link>
       </section>
     </div>
