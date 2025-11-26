@@ -1,46 +1,437 @@
+// data/courses.ts
+
+export type CourseDiscipline = "Computer Science" | "Finance" | "Other";
+
 export type CourseArtefactType = "cheatsheet" | "assignment";
+
+export type CourseArtefact = {
+  type: CourseArtefactType;
+  label: string;
+  href: string;
+  description?: string;
+};
 
 export type Course = {
   code: string;
   title: string;
-  discipline: "Computer Science" | "Finance" | "Other";
-  institution: string;
   term: string;
+  institution: string;
+  discipline: CourseDiscipline;
+  featured: boolean;
   keyTopics: string[];
-  featured: boolean;            // controls “key courses” vs hidden by default
-  artefacts?: {
-    type: CourseArtefactType;
-    label: string;
-    href: string;               // GitHub, PDF, Notion, etc.
-  }[];
+  tags: string[];
+  artefacts: CourseArtefact[];
 };
 
+// helper so you can visually see featured courses first if you want to sort later
+export const FEATURED_COURSE_CODES: string[] = [
+  "COMPSCI 361",
+  "COMPSCI 367",
+  "COMPSCI 220",
+  "COMPSCI 225",
+  "COMPSCI 230",
+  "COMPSCI 235",
+  "COMPSCI 335",
+  "COMPSCI 210",
+  "FINANCE 351",
+  "FINANCE 261",
+  "FINANCE 362",
+  "BUSINESS 202",
+];
+
+const uoa = "University of Auckland";
+const chula = "Chulalongkorn University";
+
 export const courses: Course[] = [
+  // 2022 Semester Two
+  {
+    code: "BUSINESS 111",
+    title: "Understanding Business",
+    term: "2022 Semester Two",
+    institution: uoa,
+    discipline: "Other",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "BUSINESS 114",
+    title: "Accounting for Decision Making",
+    term: "2022 Semester Two",
+    institution: uoa,
+    discipline: "Other",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "COMPSCI 110",
+    title: "Introduction to Computer Systems",
+    term: "2022 Semester Two",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "MATHS 108",
+    title: "General Mathematics 1",
+    term: "2022 Semester Two",
+    institution: uoa,
+    discipline: "Other",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+
+  // 2023 Semester One
+  {
+    code: "BUSINESS 115",
+    title: "Economics, Markets and Law",
+    term: "2023 Semester One",
+    institution: uoa,
+    discipline: "Other",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "COMPSCI 101",
+    title: "Principles of Programming",
+    term: "2023 Semester One",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "MATHS 208",
+    title: "General Mathematics 2",
+    term: "2023 Semester One",
+    institution: uoa,
+    discipline: "Other",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "PHYSICS 120",
+    title: "Advancing Physics 1",
+    term: "2023 Semester One",
+    institution: uoa,
+    discipline: "Other",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "STATS 108",
+    title: "Statistics for Commerce",
+    term: "2023 Semester One",
+    institution: uoa,
+    discipline: "Other",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+
+  // 2023 Semester Two
+  {
+    code: "ACCTG 102",
+    title: "Accounting Concepts",
+    term: "2023 Semester Two",
+    institution: uoa,
+    discipline: "Finance",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "BUSINESS 112",
+    title: "Managing Sustainable Growth 1",
+    term: "2023 Semester Two",
+    institution: uoa,
+    discipline: "Other",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "COMPSCI 120",
+    title: "Mathematics for Computer Science",
+    term: "2023 Semester Two",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "COMPSCI 130",
+    title: "Introduction to Software Fundamentals",
+    term: "2023 Semester Two",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "INFOSYS 110",
+    title: "Digital Systems",
+    term: "2023 Semester Two",
+    institution: uoa,
+    discipline: "Other",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+
+  // 2024 Semester One
+  {
+    code: "COMPSCI 210",
+    title: "Computer Organisation",
+    term: "2024 Semester One",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: true,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "COMPSCI 220",
+    title: "Algorithms and Data Structures",
+    term: "2024 Semester One",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: true,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "COMPSCI 225",
+    title: "Discrete Structures in Mathematics and Computer Science",
+    term: "2024 Semester One",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: true,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "COMPSCI 230",
+    title: "Object Oriented Software Development",
+    term: "2024 Semester One",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: true,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+
+  // 2024 Semester Two
+  {
+    code: "ACCTG 211",
+    title: "Financial Accounting",
+    term: "2024 Semester Two",
+    institution: uoa,
+    discipline: "Finance",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "COMPSCI 235",
+    title: "Software Development Methodologies",
+    term: "2024 Semester Two",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: true,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
   {
     code: "COMPSCI 335",
-    title: "Web Applications Development",
+    title: "Web Programming and Distributed Services",
+    term: "2024 Semester Two",
+    institution: uoa,
     discipline: "Computer Science",
-    institution: "University of Auckland",
-    term: "2024 S2",
-    keyTopics: [
-      "REST APIs and HTTP",
-      "Authentication and sessions",
-      "Secure full stack web apps",
-      "Relational databases and SQL"
-    ],
     featured: true,
-    artefacts: [
-      {
-        type: "assignment",
-        label: "NZSL Web App (Assignment 3)",
-        href: "https://github.com/phawatboom" // Placeholder
-      },
-      // {
-      //   type: "cheatsheet",
-      //   label: "HTTP and REST cheatsheet",
-      //   href: "https://your-link.com"
-      // }
-    ]
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
   },
-  // Add more courses here as needed
+  {
+    code: "COMPSCI 367",
+    title: "Artificial Intelligence",
+    term: "2024 Semester Two",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: true,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "FINANCE 251",
+    title: "Financial Management",
+    term: "2024 Semester Two",
+    institution: uoa,
+    discipline: "Finance",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+
+  // 2025 Semester One
+  {
+    code: "ACCTG 371",
+    title: "Financial Statement Analysis",
+    term: "2025 Semester One",
+    institution: uoa,
+    discipline: "Finance",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "BUSINESS 202",
+    title: "Business Consulting",
+    term: "2025 Semester One",
+    institution: uoa,
+    discipline: "Other",
+    featured: true,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "COMPSCI 361",
+    title: "Machine Learning",
+    term: "2025 Semester One",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: true,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "FINANCE 261",
+    title: "Introduction to Investments",
+    term: "2025 Semester One",
+    institution: uoa,
+    discipline: "Finance",
+    featured: true,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "FINANCE 351",
+    title: "Advanced Financial Management",
+    term: "2025 Semester One",
+    institution: uoa,
+    discipline: "Finance",
+    featured: true,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+
+  // 2025 Semester Two (currently enrolled)
+  {
+    code: "BUSINESS 351",
+    title: "Industry Case",
+    term: "2025 Semester Two",
+    institution: uoa,
+    discipline: "Other",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "COMPSCI 399",
+    title: "Capstone: Computer Science",
+    term: "2025 Semester Two",
+    institution: uoa,
+    discipline: "Computer Science",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "FINANCE 362",
+    title: "Risk Management",
+    term: "2025 Semester Two",
+    institution: uoa,
+    discipline: "Finance",
+    featured: true,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+  {
+    code: "FINANCE 383",
+    title: "Banking and Financial Institutions",
+    term: "2025 Semester Two",
+    institution: uoa,
+    discipline: "Finance",
+    featured: false,
+    keyTopics: [],
+    tags: [],
+    artefacts: [],
+  },
+
+  // Transfer credit from Chulalongkorn University
+  {
+    code: "BUSINESS 200LVL",
+    title: "Unspecified Credit Stage II Business",
+    term: "Exchange",
+    institution: chula,
+    discipline: "Other",
+    featured: false,
+    keyTopics: [],
+    tags: ["exchange"],
+    artefacts: [],
+  },
+  {
+    code: "COMPSCI 215",
+    title: "Data Communications and Security",
+    term: "Exchange",
+    institution: chula,
+    discipline: "Computer Science",
+    featured: false,
+    keyTopics: [],
+    tags: ["exchange"],
+    artefacts: [],
+  },
+  // Note: COMPSCI 101 and COMPSCI 120 also appear as transfer credit,
+  // but they are duplicates of your UoA courses so they are not repeated here.
 ];
