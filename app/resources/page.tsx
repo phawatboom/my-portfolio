@@ -49,8 +49,12 @@ const sections: ResourceSection[] = [
         url: "https://github.com/kdn251/interviews",
       },
       {
-        label: "bregman-arie / devops-exercises",
-        url: "https://github.com/bregman-arie/devops-exercises",
+        label: "yangshun / tech-interview-handbook",
+        url: "https://github.com/yangshun/tech-interview-handbook",
+      },
+      {
+        label: "TheAlgorithms / Python",
+        url: "https://github.com/TheAlgorithms/Python",
       },
     ],
   },
@@ -71,24 +75,13 @@ const sections: ResourceSection[] = [
         label: "brillout / awesome-react-components",
         url: "https://github.com/brillout/awesome-react-components",
       },
-    ],
-  },
-  {
-    title: "Fullstack apps, portfolios, and Git workflow",
-    description:
-      "Repos I study for architecture, portfolio inspiration, and GitHub tips.",
-    links: [
       {
-        label: "gothinkster / realworld",
-        url: "https://github.com/gothinkster/realworld",
+        label: "shadcn-ui / taxonomy",
+        url: "https://github.com/shadcn-ui/taxonomy",
       },
       {
-        label: "Evavic44 / portfolio-ideas",
-        url: "https://github.com/Evavic44/portfolio-ideas",
-      },
-      {
-        label: "tiimgreen / github-cheat-sheet",
-        url: "https://github.com/tiimgreen/github-cheat-sheet",
+        label: "vercel / commerce",
+        url: "https://github.com/vercel/commerce",
       },
     ],
   },
@@ -106,16 +99,43 @@ const sections: ResourceSection[] = [
         url: "https://github.com/stas00/ml-engineering",
       },
       {
-        label: "patchy631 / ai-engineering-hub",
-        url: "https://github.com/patchy631/ai-engineering-hub",
+        label: "mlabonne / llm-course",
+        url: "https://github.com/mlabonne/llm-course",
       },
       {
-        label: "coleam00 / context-engineering-intro",
-        url: "https://github.com/coleam00/context-engineering-intro",
+        label: "dair-ai / Prompt-Engineering-Guide",
+        url: "https://github.com/dair-ai/Prompt-Engineering-Guide",
       },
       {
-        label: "AntonOsika / gpt-engineer",
-        url: "https://github.com/AntonOsika/gpt-engineer",
+        label: "langchain-ai / langgraph",
+        url: "https://github.com/langchain-ai/langgraph",
+      },
+      {
+        label: "Shubhamsaboo / awesome-llm-apps",
+        url: "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      },
+    ],
+  },
+  {
+    title: "AI coding agents, prompts, and system design",
+    description:
+      "How I study AI agents, system prompts, and use coding copilots effectively.",
+    links: [
+      {
+        label: "anthropics / claude-code",
+        url: "https://github.com/anthropics/claude-code",
+      },
+      {
+        label: "cline / cline",
+        url: "https://github.com/cline/cline",
+      },
+      {
+        label: "github / awesome-copilot",
+        url: "https://github.com/github/awesome-copilot",
+      },
+      {
+        label: "elder-plinius / CL4R1T4S",
+        url: "https://github.com/elder-plinius/CL4R1T4S",
       },
     ],
   },
@@ -137,8 +157,12 @@ const sections: ResourceSection[] = [
         url: "https://github.com/docker/awesome-compose",
       },
       {
-        label: "cloudcommunity / Free-Certifications",
-        url: "https://github.com/cloudcommunity/Free-Certifications",
+        label: "grafana / grafana",
+        url: "https://github.com/grafana/grafana",
+      },
+      {
+        label: "minio / minio",
+        url: "https://github.com/minio/minio",
       },
       {
         label: "bregman-arie / devops-exercises",
@@ -149,7 +173,7 @@ const sections: ResourceSection[] = [
   {
     title: "Finance, trading, and crypto tooling",
     description:
-      "Open source projects at the intersection of trading, markets, and software.",
+      "Open source projects at the intersection of trading, markets, skills, and software.",
     links: [
       {
         label: "ghostfolio / ghostfolio",
@@ -162,6 +186,18 @@ const sections: ResourceSection[] = [
       {
         label: "freqtrade / freqtrade",
         url: "https://github.com/freqtrade/freqtrade",
+      },
+      {
+        label: "hummingbot / hummingbot",
+        url: "https://github.com/hummingbot/hummingbot",
+      },
+      {
+        label: "OpenBB-finance / OpenBB",
+        url: "https://github.com/OpenBB-finance/OpenBB",
+      },
+      {
+        label: "srbhr / Resume-Matcher",
+        url: "https://github.com/srbhr/Resume-Matcher",
       },
     ],
   },
