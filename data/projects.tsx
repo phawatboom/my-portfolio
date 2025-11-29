@@ -38,7 +38,8 @@ export const projects: Project[] = [
     highlight: true,
     relatedCourses: ["FINANCE 361", "COMPSCI 361"],
     links: {
-      github: "https://github.com/phawatboom/capital-compass",
+      github: "https://github.com/phawatboom/mean-reversion-stock-prediciton-algorithm",
+      demo: "http://3.104.120.14/",
     },
   },
   {
@@ -46,7 +47,7 @@ export const projects: Project[] = [
     title: "WorkLaunch",
     oneLiner: "AI powered skills and occupation matching platform.",
     descriptionShort:
-      "Maps resume skills to ESCO occupations using embeddings to suggest career paths and highlight skill gaps.",
+      "Maps resume skills to ESCO occupations using embeddings to suggest career paths and highlight skill gaps. (Confidential / Internal Tool)",
     year: 2025,
     domain: "ml",
     techStack: ["Python", "Flask or FastAPI", "NLP", "PostgreSQL", "Qdrant"],
@@ -56,7 +57,7 @@ export const projects: Project[] = [
     highlight: true,
     relatedCourses: ["COMPSCI 361"],
     links: {
-      github: "https://github.com/phawatboom/worklaunch",
+      // Confidential project
     },
   },
   {
@@ -74,7 +75,8 @@ export const projects: Project[] = [
     highlight: true,
     relatedCourses: ["COMPSCI 335"],
     links: {
-      github: "https://github.com/phawatboom/aucc-website",
+      github: "https://github.com/UoaWDCC/aucc",
+      demo: "https://aucc-staging.fly.dev/",
     },
   },
   {
@@ -91,7 +93,9 @@ export const projects: Project[] = [
       "Improved PnL and stability across products by combining simple signals with risk controls.",
     highlight: false,
     relatedCourses: ["FINANCE 351"],
-    links: {},
+    links: {
+      github: "https://github.com/phawatboom/algothon25-polygon",
+    },
   },
   {
     slug: "kitchen-intelligence",
