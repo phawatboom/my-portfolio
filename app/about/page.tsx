@@ -37,6 +37,11 @@ export default function AboutPage() {
             forecasts in a Next.js dashboard.
           </li>
           <li>
+            A valuation platform that helps investors assess stocks using DCF,
+            DDM, and Market Multiples, supported by financial health scoring, ML
+            forecasts, and risk diagnostics.
+          </li>
+          <li>
             Worklaunch, an AI powered career recommender that maps resume text
             to more than 13,000 ESCO occupations using embeddings, semantic
             search, and skill graphs.

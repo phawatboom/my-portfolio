@@ -26,15 +26,17 @@ export const projects: Project[] = [
   {
     slug: "capital-compass",
     title: "Capital Compass",
-    oneLiner: "Stock mean reversion and beta forecasting tool.",
+    oneLiner: "Quantitative tools for stock mean reversion and beta forecasting.",
     descriptionShort:
-      "Built ElasticNet based models to forecast stock beta and mean reversion, with a web dashboard to explore signals.",
+      "Developed quantitative tools to forecast stock beta and mean reversion using ElasticNet models, featuring a web dashboard for signal exploration.",
     year: 2025,
     domain: "ml",
-    techStack: ["Python", "Pandas", "Scikit learn", "Next.js", "Django", "PostgreSQL"],
-    tags: ["Mean reversion", "Factor models", "Time series"],
+    techStack: ["Python", "Pandas", "Scikit-learn", "Next.js", "Django", "PostgreSQL"],
+    tags: ["Mean reversion", "Factor models", "Time series", "Quantitative Finance"],
     impact:
-      "Helped users identify potential mispricings by surfacing mean reversion probabilities and beta trends.",
+      "Enabled identification of potential market mispricings by visualizing mean reversion probabilities and beta trends.",
+    longDescription:
+      "Capital Compass is a suite of quantitative tools designed to analyze stock market behaviors, specifically focusing on mean reversion and beta forecasting. The project leverages ElasticNet regression models to predict stock beta and identify mean-reverting tendencies. A comprehensive web dashboard, built with Next.js and Django, allows users to interactively explore these signals, providing insights into potential mispricings and risk factors. The system integrates data processing pipelines using Pandas and Scikit-learn, backed by a PostgreSQL database for robust data management.",
     highlight: true,
     relatedCourses: ["FINANCE 361", "COMPSCI 361"],
     links: {
@@ -65,13 +67,15 @@ export const projects: Project[] = [
     title: "AUCC Website Revamp",
     oneLiner: "Dynamic club website for the Auckland University Canoe Club.",
     descriptionShort:
-      "Next.js site backed by a CMS so non technical committee members can manage trips, galleries, and pages.",
+      "A modern, content-managed website for the Auckland University Canoe Club, built with Next.js 15 and Payload CMS. Developed by WDCC in 2025.",
     year: 2025,
     domain: "fullstack",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Payload CMS", "PostgreSQL"],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Payload CMS", "PostgreSQL", "AWS S3", "Fly.io"],
     tags: ["Full stack", "CMS", "Club website"],
     impact:
       "Reduced manual website updates and made it easier to promote trips and events to members.",
+    longDescription:
+      "The AUCC website serves as the digital hub for Auckland University's paddling community. It features event management for upcoming trips and registrations, community-generated trip reports with photo galleries, comprehensive river guides, and member profiles. The project uses a modern tech stack with Next.js 15 (App Router) on the frontend, Payload CMS 3.0 for headless content management, and Neon Postgres for the database. Infrastructure is managed via Terraform on AWS (S3 + CloudFront) and deployed to Fly.io. As Tech Lead, I guided a team of 8 developers and a designer to deliver a production-grade system with comprehensive documentation and handover processes.",
     highlight: true,
     relatedCourses: ["COMPSCI 335"],
     links: {
@@ -91,6 +95,8 @@ export const projects: Project[] = [
     tags: ["Market making", "Stat arb", "Trading"],
     impact:
       "Improved PnL and stability across products by combining simple signals with risk controls.",
+    longDescription:
+      "Developed for the Algothon 2025 competition, this project involved building a trading strategy algorithm to perform optimally given certain metrics (mean(PL) - 0.1 * StdDev(PL)). The solution involved assessing provided price data from a simulated trading universe of 50 instruments, building a predictive model, and back-testing it. The algorithm, implemented in Python, trades position differences based on the most recent price, managing a $10k position limit per stock. Key considerations included optimizing for trade frequency, projecting worst-case scenarios, and implementing risk minimization techniques.",
     highlight: false,
     relatedCourses: ["FINANCE 351"],
     links: {
@@ -102,7 +108,7 @@ export const projects: Project[] = [
     title: "Kitchen Intelligence",
     oneLiner: "AI meal planner and cooking assistant for real households.",
     descriptionShort:
-      "End-to-end AI system that plans cost-aware, healthy weekly meals and powers a guided cook mode.",
+      "Collective Kitchen OS is an AI powered meal planning system that adapts to real households. It combines nutrition goals, ingredient costs, kitchen equipment, local availability, and personal food preferences to generate optimised weekly meal plans and grocery lists.",
     year: 2025,
     domain: "ml",
     techStack: [
@@ -129,6 +135,23 @@ export const projects: Project[] = [
     relatedCourses: ["COMPSCI 335", "COMPSCI 361"],
     links: {
       github: "https://github.com/phawatboom/kitchen-intelligence",
+    },
+  },
+  {
+    slug: "stock-valuation",
+    title: "Stock Valuation Platform",
+    oneLiner: "Comprehensive stock valuation and analytics tool.",
+    descriptionShort:
+      "Valuation platform that helps investors assess stocks using DCF, DDM, and Market Multiples, with ML-based forecasts and risk diagnostics.",
+    year: 2025,
+    domain: "trading",
+    techStack: ["Python", "Machine Learning", "Financial Modelling"],
+    tags: ["Valuation", "DCF", "Machine Learning", "Finance"],
+    impact:
+      "Provides investors with robust valuation models and analytics to support informed decision-making.",
+    highlight: false,
+    links: {
+      github: "https://github.com/phawatboom/stock-valuation",
     },
   },
 ];
