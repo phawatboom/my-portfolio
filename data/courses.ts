@@ -40,7 +40,7 @@ export const FEATURED_COURSE_CODES: string[] = [
 ];
 
 const uoa = "University of Auckland";
-const chula = "Chulalongkorn University";
+// const chula = "Chulalongkorn University";
 
 export const courses: Course[] = [
   // 2022 Semester Two
@@ -409,29 +409,29 @@ export const courses: Course[] = [
     artefacts: [],
   },
 
-  // Transfer credit from Chulalongkorn University
-  {
-    code: "BUSINESS 200LVL",
-    title: "Unspecified Credit Stage II Business",
-    term: "Exchange",
-    institution: chula,
-    discipline: "Other",
-    featured: false,
-    keyTopics: [],
-    tags: ["exchange"],
-    artefacts: [],
-  },
-  {
-    code: "COMPSCI 215",
-    title: "Data Communications and Security",
-    term: "Exchange",
-    institution: chula,
-    discipline: "Computer Science",
-    featured: false,
-    keyTopics: [],
-    tags: ["exchange"],
-    artefacts: [],
-  },
+  // // Transfer credit from Chulalongkorn University
+  // {
+  //   code: "BUSINESS 200LVL",
+  //   title: "Unspecified Credit Stage II Business",
+  //   term: "Exchange",
+  //   institution: chula,
+  //   discipline: "Other",
+  //   featured: false,
+  //   keyTopics: [],
+  //   tags: ["exchange"],
+  //   artefacts: [],
+  // },
+  // {
+  //   code: "COMPSCI 215",
+  //   title: "Data Communications and Security",
+  //   term: "Exchange",
+  //   institution: chula,
+  //   discipline: "Computer Science",
+  //   featured: false,
+  //   keyTopics: [],
+  //   tags: ["exchange"],
+  //   artefacts: [],
+  // },
   // Note: COMPSCI 101 and COMPSCI 120 also appear as transfer credit,
   // but they are duplicates of your UoA courses so they are not repeated here.
 ];
