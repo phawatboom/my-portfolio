@@ -14,7 +14,7 @@ type ResourceLink = {
 
 type ResourceSection = {
   title: string;
-  emoji: string;
+  kicker: string;
   description: string;
   links: ResourceLink[];
 };
@@ -22,9 +22,9 @@ type ResourceSection = {
 const sections: ResourceSection[] = [
   {
     title: "Interview preparation",
-    emoji: "🎯",
+    kicker: "How I prepare",
     description:
-      "How I prepare for frontend, JavaScript, React, system design, and general CS interviews.",
+      "My backbone for frontend, JavaScript, React, system design, and general CS interviews.",
     links: [
       { label: "sudheerj / javascript-interview-questions", url: "https://github.com/sudheerj/javascript-interview-questions" },
       { label: "sudheerj / reactjs-interview-questions", url: "https://github.com/sudheerj/reactjs-interview-questions" },
@@ -38,9 +38,9 @@ const sections: ResourceSection[] = [
   },
   {
     title: "Frontend, React, and TypeScript",
-    emoji: "🧩",
+    kicker: "Interfaces",
     description:
-      "Bookmarks and component libraries I use to deepen frontend skills.",
+      "References and component libraries that influence how I think about building clean frontends.",
     links: [
       { label: "dypsilon / frontend-dev-bookmarks", url: "https://github.com/dypsilon/frontend-dev-bookmarks" },
       { label: "typescript-cheatsheets / react", url: "https://github.com/typescript-cheatsheets/react" },
@@ -51,9 +51,9 @@ const sections: ResourceSection[] = [
   },
   {
     title: "AI, ML, and LLM engineering",
-    emoji: "🧠",
+    kicker: "Models and systems",
     description:
-      "Resources I use to learn ML engineering, LLMs, RAG, and AI agents.",
+      "How I learn practical ML engineering, LLMs, RAG, and agents beyond toy examples.",
     links: [
       { label: "chiphuyen / aie-book", url: "https://github.com/chiphuyen/aie-book" },
       { label: "stas00 / ml-engineering", url: "https://github.com/stas00/ml-engineering" },
@@ -64,10 +64,10 @@ const sections: ResourceSection[] = [
     ],
   },
   {
-    title: "AI coding agents, prompts, and copilots",
-    emoji: "🤖",
+    title: "AI coding agents and copilots",
+    kicker: "Working with AI",
     description:
-      "How I study AI agents, system prompts, and use coding copilots effectively.",
+      "Resources that help me design prompts, agents, and workflows around coding copilots.",
     links: [
       { label: "anthropics / claude-code", url: "https://github.com/anthropics/claude-code" },
       { label: "cline / cline", url: "https://github.com/cline/cline" },
@@ -77,9 +77,9 @@ const sections: ResourceSection[] = [
   },
   {
     title: "Cloud, DevOps, AWS, and Docker",
-    emoji: "☁️",
+    kicker: "Running in production",
     description:
-      "Tools and guides that help me learn how to run software in production.",
+      "Tools and guides that shape how I think about infrastructure, observability, and deployment.",
     links: [
       { label: "localstack / localstack", url: "https://github.com/localstack/localstack" },
       { label: "open-guides / og-aws", url: "https://github.com/open-guides/og-aws" },
@@ -91,9 +91,9 @@ const sections: ResourceSection[] = [
   },
   {
     title: "Finance, trading, and crypto tooling",
-    emoji: "📈",
+    kicker: "Markets",
     description:
-      "Open source projects at the intersection of trading, markets, skills, and software.",
+      "Open source projects that inspire how I structure trading systems and portfolio tools.",
     links: [
       { label: "ghostfolio / ghostfolio", url: "https://github.com/ghostfolio/ghostfolio" },
       { label: "ccxt / ccxt", url: "https://github.com/ccxt/ccxt" },
@@ -105,9 +105,9 @@ const sections: ResourceSection[] = [
   },
   {
     title: "Languages, patterns, and career",
-    emoji: "🧭",
+    kicker: "Foundations",
     description:
-      "Broader CS foundations and career tools I use to grow over time.",
+      "Broader CS and career resources I use to stay grounded over time.",
     links: [
       { label: "akullpp / awesome-java", url: "https://github.com/akullpp/awesome-java" },
       { label: "DovAmir / awesome-design-patterns", url: "https://github.com/DovAmir/awesome-design-patterns" },
@@ -118,28 +118,39 @@ const sections: ResourceSection[] = [
 ];
 
 const featuredLinks: ResourceLink[] = [
-  { label: "mlabonne / llm-course", url: "https://github.com/mlabonne/llm-course", note: "My go to for LLM fundamentals." },
-  { label: "karanpratapsingh / system-design", url: "https://github.com/karanpratapsingh/system-design", note: "Clear system design foundations." },
-  { label: "freqtrade / freqtrade", url: "https://github.com/freqtrade/freqtrade", note: "Helps me think about real trading workflows." },
+  {
+    label: "mlabonne / llm-course",
+    url: "https://github.com/mlabonne/llm-course",
+    note: "My go to reference for LLM fundamentals.",
+  },
+  {
+    label: "karanpratapsingh / system-design",
+    url: "https://github.com/karanpratapsingh/system-design",
+    note: "A clear mental model for system design.",
+  },
+  {
+    label: "freqtrade / freqtrade",
+    url: "https://github.com/freqtrade/freqtrade",
+    note: "Helps me think in realistic trading workflows.",
+  },
 ];
 
 export default function ResourcesPage() {
   return (
-    <div className="max-w-5xl mx-auto space-y-10">
+    <div className="max-w-6xl mx-auto space-y-12">
       {/* Hero */}
       <section className="pt-6 space-y-3">
         <h1 className="text-4xl font-extrabold">Learning resources</h1>
         <p className="text-lg text-gray-700 max-w-2xl">
-          A curated set of repositories and guides I use to level up in software
-          engineering, AI, cloud, and finance. I keep this list small, tested,
-          and practical.
+          A focused library of tools and references I use to learn faster.
+          Everything here is something I have used personally.
         </p>
       </section>
 
-      {/* Featured picks */}
-      <section className="space-y-3">
+      {/* Featured */}
+      <section className="space-y-4">
         <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-500">
-          Featured picks
+          Featured
         </h2>
         <div className="grid md:grid-cols-3 gap-4 text-sm">
           {featuredLinks.map((item) => (
@@ -160,22 +171,18 @@ export default function ResourcesPage() {
       </section>
 
       {/* Sections */}
-      <section className="space-y-8 pb-10">
+      <section className="space-y-10 pb-10">
         {sections.map((section) => (
           <div
             key={section.title}
-            className="bg-white shadow-sm rounded-2xl p-6 border"
+            className="border-t pt-6 grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
           >
-            <div className="flex items-start justify-between gap-4 mb-3">
-              <div>
-                <h2 className="text-xl font-semibold flex items-center gap-2">
-                  <span className="text-xl">{section.emoji}</span>
-                  <span>{section.title}</span>
-                </h2>
-                <p className="text-sm text-gray-700 mt-1">
-                  {section.description}
-                </p>
-              </div>
+            <div className="space-y-2">
+              <p className="text-xs uppercase tracking-[0.18em] text-gray-500">
+                {section.kicker}
+              </p>
+              <h2 className="text-xl font-semibold">{section.title}</h2>
+              <p className="text-sm text-gray-700">{section.description}</p>
             </div>
             <ul className="space-y-2 text-sm">
               {section.links.map((link) => (
@@ -184,12 +191,15 @@ export default function ResourcesPage() {
                     href={link.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-amber-700 underline underline-offset-4 hover:text-amber-600"
+                    className="inline-flex items-center border-b border-transparent pb-0.5 text-gray-900 hover:text-amber-700 hover:border-amber-400"
                   >
-                    {link.label}
+                    <span>{link.label}</span>
+                    <span className="ml-1 text-[11px]">↗</span>
                   </a>
                   {link.note && (
-                    <span className="text-xs text-gray-600">{"  "}{link.note}</span>
+                    <span className="ml-1 text-xs text-gray-600">
+                      {link.note}
+                    </span>
                   )}
                 </li>
               ))}
