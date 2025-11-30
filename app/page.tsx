@@ -4,7 +4,8 @@ import { projects } from "../data/projects";
 
 export const metadata: Metadata = {
   title: "Phawat | Portfolio",
-  description: "Finance and Computer Science student building data driven products.",
+  description:
+    "Finance and Computer Science student building data driven products.",
 };
 
 export default function HomePage() {
@@ -28,9 +29,9 @@ export default function HomePage() {
           </h2>
 
           <p className="text-lg text-gray-700 max-w-xl">
-            I design and ship data driven tools, from trading algorithms and valuation
-            dashboards to skills intelligence systems that help people make better
-            decisions about money, careers, and risk.
+            I design and ship data driven tools, from trading algorithms and
+            valuation dashboards to skills intelligence systems that help people
+            make better decisions about money, careers, and risk.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -77,45 +78,43 @@ export default function HomePage() {
               Turning messy data into usable decisions.
             </h3>
             <p className="text-sm text-gray-300">
-              Trading bots, multi horizon stock forecasts, and a career engine
-              that maps resumes to 13,000+ occupations using embeddings and skill graphs.
+              Trading bots, multi-horizon stock forecasts, and a career engine
+              that maps resumes to 13,000+ occupations using embeddings and
+              skill graphs.
             </p>
-            <div className="grid grid-cols-2 gap-3 text-xs mt-2">
-              <div className="rounded-2xl bg-white/5 p-3 border border-white/10">
-                <p className="text-gray-400">Focus</p>
-                <p className="font-semibold">AI, markets, product</p>
+            <div className="grid grid-cols-2 gap-4 text-xs text-gray-300 pt-2">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.18em] text-gray-500">
+                  Focus
+                </p>
+                <p className="font-semibold mt-1">
+                  AI, markets, product thinking
+                </p>
               </div>
-              <div className="rounded-2xl bg-white/5 p-3 border border-white/10">
-                <p className="text-gray-400">Stack</p>
-                <p className="font-semibold">Python, TS, Next.js, AWS</p>
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.18em] text-gray-500">
+                  Strengths
+                </p>
+                <p className="font-semibold mt-1">
+                  Systems, clarity, iteration
+                </p>
               </div>
             </div>
-            <p className="mt-2 text-[11px] text-gray-400">
-              Currently exploring: mean reversion models, LLM powered copilots,
-              and production ready trading workflows.
-            </p>
           </div>
         </div>
       </header>
 
-      {/* What I build */}
-      <section className="grid md:grid-cols-3 gap-6">
-        <div className="bg-white rounded-2xl p-5 shadow-sm border">
-          <h3 className="text-sm font-semibold text-gray-900 mb-1">
-            Trading & market systems
+      {/* What I am building now */}
+      <section className="grid md:grid-cols-3 gap-6 text-sm">
+        <div className="bg-white rounded-2xl p-5 shadow-sm border md:col-span-2">
+          <h3 className="text-sm font-semibold text-gray-900 mb-2">
+            What I am building now
           </h3>
           <p className="text-sm text-gray-600">
-            Rule based and ML assisted strategies, portfolio signals, and tools
-            that help test ideas in live markets.
-          </p>
-        </div>
-        <div className="bg-white rounded-2xl p-5 shadow-sm border">
-          <h3 className="text-sm font-semibold text-gray-900 mb-1">
-            Valuation & analytics tools
-          </h3>
-          <p className="text-sm text-gray-600">
-            DCF, DDM, multiples, and scenario engines that turn raw statements
-            into clear, comparable outcomes.
+            Most of my energy is on three flagship projects: Capital Compass
+            (quant & beta forecasting), the AUCC website (real users, real
+            content), and a stock valuation platform that makes DCF and
+            scenario analysis feel interactive.
           </p>
         </div>
         <div className="bg-white rounded-2xl p-5 shadow-sm border">
@@ -140,6 +139,12 @@ export default function HomePage() {
             View all projects
           </Link>
         </div>
+
+        <p className="text-sm text-gray-600">
+          These cards cover Capital Compass, the AUCC rebuild, and the valuation
+          platform in more detail. The rest of the projects page shows
+          supporting experiments and earlier work.
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {highlightedProjects.map((project) => (
@@ -183,6 +188,53 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Life outside work teaser */}
+      <section className="space-y-4">
+        <div className="flex items-baseline justify-between gap-4">
+          <h3 className="text-2xl font-semibold">Life outside work</h3>
+          <Link
+            href="/life"
+            className="text-sm text-gray-700 underline underline-offset-4 hover:text-gray-900"
+          >
+            See Life OS
+          </Link>
+        </div>
+        <p className="text-sm text-gray-600 max-w-2xl">
+          The way I cook, invest, and build community is connected to how I
+          design products: simple systems, clear constraints, and small
+          improvements over time.
+        </p>
+        <div className="grid md:grid-cols-3 gap-4 text-sm">
+          <div className="bg-white border rounded-2xl p-4 shadow-sm">
+            <p className="text-xs uppercase tracking-[0.18em] text-gray-500">
+              Food & cooking
+            </p>
+            <p className="mt-2 text-gray-700">
+              High-protein meals, simple staples, and occasional experiments
+              that make cooking feel like a creative outlet.
+            </p>
+          </div>
+          <div className="bg-white border rounded-2xl p-4 shadow-sm">
+            <p className="text-xs uppercase tracking-[0.18em] text-gray-500">
+              Investing & trading
+            </p>
+            <p className="mt-2 text-gray-700">
+              Macro, equities, and crypto, tested through small deliberate bets
+              and clear risk rules.
+            </p>
+          </div>
+          <div className="bg-white border rounded-2xl p-4 shadow-sm">
+            <p className="text-xs uppercase tracking-[0.18em] text-gray-500">
+              Relationships & community
+            </p>
+            <p className="mt-2 text-gray-700">
+              AUCC, friends, and family, with rituals that keep me grounded
+              while I push on ambitious projects.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Signals / contact */}
       <section className="grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 items-start pb-10">
         <div className="bg-white rounded-2xl border shadow-sm p-6 space-y-4">
@@ -209,8 +261,8 @@ export default function HomePage() {
         <div className="bg-gray-900 text-white rounded-2xl p-6 border border-gray-800">
           <h3 className="text-xl font-semibold mb-2">Open to opportunities</h3>
           <p className="text-sm text-gray-200 mb-4">
-            I am interested in AI or ML Engineer roles, full stack product engineering,
-            and quantitative or FinTech analyst roles.
+            I am interested in AI or ML Engineer roles, full stack product
+            engineering, and quantitative or FinTech analyst roles.
           </p>
           <Link
             href="mailto:pboomhtsaengs3@gmail.com"

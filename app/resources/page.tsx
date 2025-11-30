@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Resources | Phawat",
   description:
-    "Curated resources I use to learn software, AI, cloud, and finance.",
+    "A small, opinionated set of resources I actually use for software, AI, cloud, and finance.",
 };
 
 type ResourceLink = {
@@ -12,145 +12,192 @@ type ResourceLink = {
   note?: string;
 };
 
-type ResourceSection = {
+type Scenario = {
+  id: string;
   title: string;
-  kicker: string;
-  description: string;
-  links: ResourceLink[];
+  persona: string;
+  startHere: ResourceLink[];
+  deepen?: ResourceLink[];
 };
-
-const sections: ResourceSection[] = [
-  {
-    title: "Interview preparation",
-    kicker: "How I prepare",
-    description:
-      "My backbone for frontend, JavaScript, React, system design, and general CS interviews.",
-    links: [
-      { label: "sudheerj / javascript-interview-questions", url: "https://github.com/sudheerj/javascript-interview-questions" },
-      { label: "sudheerj / reactjs-interview-questions", url: "https://github.com/sudheerj/reactjs-interview-questions" },
-      { label: "yangshun / front-end-interview-handbook", url: "https://github.com/yangshun/front-end-interview-handbook" },
-      { label: "karanpratapsingh / system-design", url: "https://github.com/karanpratapsingh/system-design" },
-      { label: "ByteByteGoHq / system-design-101", url: "https://github.com/ByteByteGoHq/system-design-101" },
-      { label: "kdn251 / interviews", url: "https://github.com/kdn251/interviews" },
-      { label: "yangshun / tech-interview-handbook", url: "https://github.com/yangshun/tech-interview-handbook" },
-      { label: "TheAlgorithms / Python", url: "https://github.com/TheAlgorithms/Python" },
-    ],
-  },
-  {
-    title: "Frontend, React, and TypeScript",
-    kicker: "Interfaces",
-    description:
-      "References and component libraries that influence how I think about building clean frontends.",
-    links: [
-      { label: "dypsilon / frontend-dev-bookmarks", url: "https://github.com/dypsilon/frontend-dev-bookmarks" },
-      { label: "typescript-cheatsheets / react", url: "https://github.com/typescript-cheatsheets/react" },
-      { label: "brillout / awesome-react-components", url: "https://github.com/brillout/awesome-react-components" },
-      { label: "shadcn-ui / taxonomy", url: "https://github.com/shadcn-ui/taxonomy" },
-      { label: "vercel / commerce", url: "https://github.com/vercel/commerce" },
-    ],
-  },
-  {
-    title: "AI, ML, and LLM engineering",
-    kicker: "Models and systems",
-    description:
-      "How I learn practical ML engineering, LLMs, RAG, and agents beyond toy examples.",
-    links: [
-      { label: "chiphuyen / aie-book", url: "https://github.com/chiphuyen/aie-book" },
-      { label: "stas00 / ml-engineering", url: "https://github.com/stas00/ml-engineering" },
-      { label: "mlabonne / llm-course", url: "https://github.com/mlabonne/llm-course" },
-      { label: "dair-ai / Prompt-Engineering-Guide", url: "https://github.com/dair-ai/Prompt-Engineering-Guide" },
-      { label: "langchain-ai / langgraph", url: "https://github.com/langchain-ai/langgraph" },
-      { label: "Shubhamsaboo / awesome-llm-apps", url: "https://github.com/Shubhamsaboo/awesome-llm-apps" },
-    ],
-  },
-  {
-    title: "AI coding agents and copilots",
-    kicker: "Working with AI",
-    description:
-      "Resources that help me design prompts, agents, and workflows around coding copilots.",
-    links: [
-      { label: "anthropics / claude-code", url: "https://github.com/anthropics/claude-code" },
-      { label: "cline / cline", url: "https://github.com/cline/cline" },
-      { label: "github / awesome-copilot", url: "https://github.com/github/awesome-copilot" },
-      { label: "elder-plinius / CL4R1T4S", url: "https://github.com/elder-plinius/CL4R1T4S" },
-    ],
-  },
-  {
-    title: "Cloud, DevOps, AWS, and Docker",
-    kicker: "Running in production",
-    description:
-      "Tools and guides that shape how I think about infrastructure, observability, and deployment.",
-    links: [
-      { label: "localstack / localstack", url: "https://github.com/localstack/localstack" },
-      { label: "open-guides / og-aws", url: "https://github.com/open-guides/og-aws" },
-      { label: "docker / awesome-compose", url: "https://github.com/docker/awesome-compose" },
-      { label: "grafana / grafana", url: "https://github.com/grafana/grafana" },
-      { label: "minio / minio", url: "https://github.com/minio/minio" },
-      { label: "bregman-arie / devops-exercises", url: "https://github.com/bregman-arie/devops-exercises" },
-    ],
-  },
-  {
-    title: "Finance, trading, and crypto tooling",
-    kicker: "Markets",
-    description:
-      "Open source projects that inspire how I structure trading systems and portfolio tools.",
-    links: [
-      { label: "ghostfolio / ghostfolio", url: "https://github.com/ghostfolio/ghostfolio" },
-      { label: "ccxt / ccxt", url: "https://github.com/ccxt/ccxt" },
-      { label: "freqtrade / freqtrade", url: "https://github.com/freqtrade/freqtrade" },
-      { label: "hummingbot / hummingbot", url: "https://github.com/hummingbot/hummingbot" },
-      { label: "OpenBB-finance / OpenBB", url: "https://github.com/OpenBB-finance/OpenBB" },
-      { label: "srbhr / Resume-Matcher", url: "https://github.com/srbhr/Resume-Matcher" },
-    ],
-  },
-  {
-    title: "Languages, patterns, and career",
-    kicker: "Foundations",
-    description:
-      "Broader CS and career resources I use to stay grounded over time.",
-    links: [
-      { label: "akullpp / awesome-java", url: "https://github.com/akullpp/awesome-java" },
-      { label: "DovAmir / awesome-design-patterns", url: "https://github.com/DovAmir/awesome-design-patterns" },
-      { label: "lukasz-madon / awesome-remote-job", url: "https://github.com/lukasz-madon/awesome-remote-job" },
-      { label: "freeCodeCamp / freeCodeCamp", url: "https://github.com/freeCodeCamp/freeCodeCamp" },
-    ],
-  },
-];
 
 const featuredLinks: ResourceLink[] = [
   {
-    label: "mlabonne / llm-course",
-    url: "https://github.com/mlabonne/llm-course",
-    note: "My go to reference for LLM fundamentals.",
-  },
-  {
     label: "karanpratapsingh / system-design",
     url: "https://github.com/karanpratapsingh/system-design",
-    note: "A clear mental model for system design.",
+    note: "Great backbone for system design mental models.",
   },
   {
-    label: "freqtrade / freqtrade",
-    url: "https://github.com/freqtrade/freqtrade",
-    note: "Helps me think in realistic trading workflows.",
+    label: "Practical Deep Learning for Coders",
+    url: "https://course.fast.ai/",
+    note: "Made deep learning feel applied and buildable.",
+  },
+  {
+    label: "TheAlgorithms / Python",
+    url: "https://github.com/TheAlgorithms/Python",
+    note: "Clean reference for core algorithms and data structures.",
+  },
+];
+
+const scenarios: Scenario[] = [
+  {
+    id: "interviews",
+    title: "Frontend · React · system design interviews",
+    persona: "If you are preparing for frontend / full-stack interviews:",
+    startHere: [
+      {
+        label: "sudheerj / javascript-interview-questions",
+        url: "https://github.com/sudheerj/javascript-interview-questions",
+      },
+      {
+        label: "sudheerj / reactjs-interview-questions",
+        url: "https://github.com/sudheerj/reactjs-interview-questions",
+      },
+      {
+        label: "yangshun / front-end-interview-handbook",
+        url: "https://github.com/yangshun/front-end-interview-handbook",
+      },
+    ],
+    deepen: [
+      {
+        label: "karanpratapsingh / system-design",
+        url: "https://github.com/karanpratapsingh/system-design",
+      },
+      {
+        label: "ByteByteGoHQ / system-design-101",
+        url: "https://github.com/ByteByteGoHq/system-design-101",
+      },
+      {
+        label: "kdn251 / interviews",
+        url: "https://github.com/kdn251/interviews",
+      },
+      {
+        label: "yangshun / tech-interview-handbook",
+        url: "https://github.com/yangshun/tech-interview-handbook",
+      },
+    ],
+  },
+  {
+    id: "ai-ml",
+    title: "Applied AI, deep learning, and LLMs",
+    persona: "If you want to get serious about applied ML and LLMs:",
+    startHere: [
+      {
+        label: "fast.ai course",
+        url: "https://course.fast.ai/",
+        note: "End-to-end deep learning with real projects.",
+      },
+      {
+        label: "karpathy / nn-zero-to-hero",
+        url: "https://github.com/karpathy/nn-zero-to-hero",
+        note: "Builds neural nets from scratch so the math feels concrete.",
+      },
+      {
+        label: "Awesome LLMs",
+        url: "https://github.com/Hannibal046/Awesome-LLM",
+        note: "Curated list for modern LLM tooling.",
+      },
+    ],
+    deepen: [
+      {
+        label: "llm-course / full-stack-llm",
+        url: "https://github.com/full-stack-llm/full-stack-llm",
+        note: "Patterns for serving and evaluating LLM apps.",
+      },
+      {
+        label: "stanford / cs229",
+        url: "https://cs229.stanford.edu/",
+        note: "Theory when you want a stronger ML foundation.",
+      },
+    ],
+  },
+  {
+    id: "fullstack",
+    title: "Full-stack engineering and cloud",
+    persona: "If you are building modern web apps end-to-end:",
+    startHere: [
+      {
+        label: "vercel / next.js docs",
+        url: "https://nextjs.org/learn",
+        note: "Best place to get fluent in app-router Next.js.",
+      },
+      {
+        label: "Django documentation",
+        url: "https://docs.djangoproject.com/en/stable/",
+        note: "My default backend reference.",
+      },
+      {
+        label: "SQLBolt",
+        url: "https://sqlbolt.com/",
+        note: "Hands-on SQL practice in small chunks.",
+      },
+    ],
+    deepen: [
+      {
+        label: "The Twelve-Factor App",
+        url: "https://12factor.net/",
+        note: "Simple checklist for production-friendly services.",
+      },
+      {
+        label: "Awesome Terraform",
+        url: "https://github.com/shuaibiyy/awesome-terraform",
+      },
+      {
+        label: "Awesome AWS",
+        url: "https://github.com/donnemartin/awesome-aws",
+      },
+    ],
+  },
+  {
+    id: "trading-finance",
+    title: "Trading, quant, and finance",
+    persona: "If you are exploring trading systems and corporate finance:",
+    startHere: [
+      {
+        label: "freqtrade / freqtrade",
+        url: "https://github.com/freqtrade/freqtrade",
+        note: "Good reference for real trading workflows and risk controls.",
+      },
+      {
+        label: "QuantStart articles",
+        url: "https://www.quantstart.com/articles/",
+        note: "Wide range of quant topics with code.",
+      },
+      {
+        label: "Aswath Damodaran online classes",
+        url: "https://pages.stern.nyu.edu/~adamodar/",
+        note: "Valuation and corporate finance fundamentals.",
+      },
+    ],
+    deepen: [
+      {
+        label: "quantopian / lectures (archived)",
+        url: "https://github.com/quantopian/lectures",
+      },
+      {
+        label: "Awesome Quant",
+        url: "https://github.com/wilsonfreitas/awesome-quant",
+      },
+    ],
   },
 ];
 
 export default function ResourcesPage() {
   return (
-    <div className="max-w-6xl mx-auto space-y-12">
+    <div className="max-w-5xl mx-auto space-y-10">
       {/* Hero */}
       <section className="pt-6 space-y-3">
         <h1 className="text-4xl font-extrabold">Learning resources</h1>
         <p className="text-lg text-gray-700 max-w-2xl">
-          A focused library of tools and references I use to learn faster.
-          Everything here is something I have used personally.
+          A small, opinionated library I keep coming back to. If you are
+          preparing for interviews, building products, or going deeper into AI
+          and markets, this is where I would start.
         </p>
       </section>
 
-      {/* Featured */}
-      <section className="space-y-4">
+      {/* Featured picks */}
+      <section className="space-y-3">
         <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-500">
-          Featured
+          Featured picks
         </h2>
         <div className="grid md:grid-cols-3 gap-4 text-sm">
           {featuredLinks.map((item) => (
@@ -170,41 +217,74 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Sections */}
-      <section className="space-y-10 pb-10">
-        {sections.map((section) => (
-          <div
-            key={section.title}
-            className="border-t pt-6 grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
+      {/* Scenario blocks */}
+      <section className="space-y-8 pb-10">
+        {scenarios.map((scenario) => (
+          <article
+            key={scenario.id}
+            className="bg-white shadow-sm rounded-2xl p-6 border"
           >
-            <div className="space-y-2">
+            <div className="flex flex-col gap-2 mb-4">
               <p className="text-xs uppercase tracking-[0.18em] text-gray-500">
-                {section.kicker}
+                {scenario.title}
               </p>
-              <h2 className="text-xl font-semibold">{section.title}</h2>
-              <p className="text-sm text-gray-700">{section.description}</p>
+              <h2 className="text-lg font-semibold">{scenario.persona}</h2>
             </div>
-            <ul className="space-y-2 text-sm">
-              {section.links.map((link) => (
-                <li key={link.url}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center border-b border-transparent pb-0.5 text-gray-900 hover:text-amber-700 hover:border-amber-400"
-                  >
-                    <span>{link.label}</span>
-                    <span className="ml-1 text-[11px]">↗</span>
-                  </a>
-                  {link.note && (
-                    <span className="ml-1 text-xs text-gray-600">
-                      {link.note}
-                    </span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+
+            <div className="grid md:grid-cols-[minmax(0,2fr)_minmax(0,2fr)] gap-6 text-sm">
+              <div>
+                <p className="text-xs font-semibold text-gray-500 mb-2">
+                  Start here (first 3 links)
+                </p>
+                <ul className="space-y-2">
+                  {scenario.startHere.map((link) => (
+                    <li key={link.url}>
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-baseline gap-2 border-b border-gray-300 pb-0.5 text-gray-900 hover:text-amber-700 hover:border-amber-400 transition-colors"
+                      >
+                        <span>{link.label}</span>
+                      </a>
+                      {link.note && (
+                        <p className="text-xs text-gray-600 mt-0.5">
+                          {link.note}
+                        </p>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {scenario.deepen && scenario.deepen.length > 0 && (
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 mb-2">
+                    Go deeper when you have more time
+                  </p>
+                  <ul className="space-y-2">
+                    {scenario.deepen.map((link) => (
+                      <li key={link.url}>
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-baseline gap-2 border-b border-gray-200 pb-0.5 text-gray-800 hover:text-amber-700 hover:border-amber-300 transition-colors"
+                        >
+                          <span>{link.label}</span>
+                        </a>
+                        {link.note && (
+                          <p className="text-xs text-gray-600 mt-0.5">
+                            {link.note}
+                          </p>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </article>
         ))}
       </section>
     </div>

@@ -69,15 +69,19 @@ export default function RootLayout({
                 aria-label="Email Phawat"
                 className="hover:text-amber-700"
               >
-                {/* simple envelope icon */}
+                {/* refined outline envelope icon so it is not a solid square */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="w-5 h-5"
                 >
-                  <path d="M4 6h16v12H4z" />
-                  <path d="M4 6l8 7 8-7" />
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M5 7.5l7 5 7-5" />
                 </svg>
               </a>
               <a
