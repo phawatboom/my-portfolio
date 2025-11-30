@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "A portfolio showcasing my projects and skills",
+  title: "Phawat | Portfolio",
+  description: "A portfolio showcasing my projects and skills.",
 };
 
 export default function RootLayout({
@@ -29,44 +29,52 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 text-gray-900`}
       >
         {/* Navigation */}
-        <nav className="p-5 bg-white shadow-md">
-          <div className="max-w-5xl mx-auto flex items-center justify-between">
-            <h1 className="text-2xl font-bold">Phawat</h1>
+        <nav className="border-b bg-white">
+          <div className="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
+            {/* Brand */}
+            <Link href="/" className="flex items-center gap-2">
+              <span className="text-sm font-semibold tracking-[0.18em] uppercase">
+                Phawat
+              </span>
+            </Link>
 
             {/* Centered nav links */}
             <div className="flex-1 flex justify-center">
-              <div className="flex space-x-8">
-                <Link href="/" className="text-lg hover:text-blue-500">
+              <div className="flex items-center gap-6 text-sm font-medium">
+                <Link href="/" className="hover:text-amber-700">
                   Home
                 </Link>
-                <Link href="/about" className="text-lg hover:text-blue-500">
+                <Link href="/about" className="hover:text-amber-700">
                   About
                 </Link>
-                <Link href="/projects" className="text-lg hover:text-blue-500">
+                <Link href="/projects" className="hover:text-amber-700">
                   Projects
                 </Link>
-                <Link href="/courses" className="text-lg hover:text-blue-500">
+                <Link href="/courses" className="hover:text-amber-700">
                   Courses
                 </Link>
-                <Link href="/resources" className="text-lg hover:text-blue-500">
+                <Link href="/resources" className="hover:text-amber-700">
                   Resources
+                </Link>
+                <Link href="/life" className="hover:text-amber-700">
+                  Life OS
                 </Link>
               </div>
             </div>
 
             {/* Social icons on the right */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 text-gray-700">
               <a
                 href="mailto:pboomhtsaengs3@gmail.com"
                 aria-label="Email Phawat"
-                className="text-gray-700 hover:text-blue-500"
+                className="hover:text-amber-700"
               >
                 {/* simple envelope icon */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                 >
                   <path d="M4 6h16v12H4z" />
                   <path d="M4 6l8 7 8-7" />
@@ -77,13 +85,13 @@ export default function RootLayout({
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub profile"
-                className="text-gray-700 hover:text-blue-500"
+                className="hover:text-amber-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                 >
                   <path
                     fillRule="evenodd"
@@ -97,13 +105,13 @@ export default function RootLayout({
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn profile"
-                className="text-gray-700 hover:text-blue-500"
+                className="hover:text-amber-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                 >
                   <path d="M4.983 3.5C4.983 4.604 4.088 5.5 2.983 5.5 1.879 5.5.983 4.604.983 3.5.983 2.395 1.879 1.5 2.983 1.5c1.105 0 2 .895 2 2Zm.017 3.75H1v13h4V7.25Zm5.5 0H7.5v13h4v-6.93c0-1.838.852-2.92 2.337-2.92 1.41 0 2.163.996 2.163 2.92V20.25h4v-7.78C20 8.829 18.262 7 15.63 7c-1.862 0-3.215.825-3.88 2.021h-.05V7.25Z" />
                 </svg>
@@ -113,13 +121,16 @@ export default function RootLayout({
         </nav>
 
         {/* Main Content */}
-        <main className="p-10">
-          <div className="max-w-5xl mx-auto">{children}</div>
+        <main className="px-5 py-10">
+          <div className="max-w-6xl mx-auto">{children}</div>
         </main>
 
         {/* Footer */}
-        <footer className="text-center py-5 bg-gray-800 text-white">
-          <p>&copy; {new Date().getFullYear()} Phawat. All Rights Reserved.</p>
+        <footer className="border-t bg-white">
+          <div className="max-w-6xl mx-auto px-5 py-5 text-xs text-gray-500 flex items-center justify-between">
+            <p>&copy; {new Date().getFullYear()} Phawat. All rights reserved.</p>
+            <p>AI, markets, and products.</p>
+          </div>
         </footer>
       </body>
     </html>

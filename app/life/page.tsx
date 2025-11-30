@@ -1,10 +1,9 @@
-// app/life/page.tsx
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Life OS | Phawat",
   description:
-    "How I manage health, relationships, food, exploration, investing, and my life roadmap.",
+    "How I manage health, relationships, food, exploration, investing, media, and my life roadmap.",
 };
 
 type LifeAspectId =
@@ -13,6 +12,8 @@ type LifeAspectId =
   | "food"
   | "explore"
   | "investing"
+  | "media"
+  | "essentials"
   | "roadmap";
 
 type LifeLink = {
@@ -38,7 +39,6 @@ const lifeAspects: LifeAspect[] = [
       "Strength training several times per week",
       "Paddling and outdoor sessions with AUCC",
     ],
-    links: [],
   },
   {
     id: "relationships",
@@ -49,31 +49,53 @@ const lifeAspects: LifeAspect[] = [
       "Regular catchups with friends",
       "Clubs and events to meet new people",
     ],
-    links: [],
   },
   {
     id: "food",
     title: "Food and cooking",
     oneLiner:
-      "Trying to turn simple ingredients into high protein, enjoyable meals.",
+      "Turning simple ingredients into high protein, enjoyable meals.",
     routines: ["Weekly meal planning", "Experimenting with new recipes"],
-    links: [],
   },
   {
     id: "explore",
     title: "Exploration and travel",
     oneLiner:
       "Exploring new places, cultures, and ideas while studying in NZ, TH, and AU.",
-    routines: [],
-    links: [],
   },
   {
     id: "investing",
     title: "Investing and trading",
     oneLiner:
       "Building rules based systems for long term investing and short term trading.",
-    routines: [],
-    links: [],
+  },
+  {
+    id: "media",
+    title: "Media and inspiration",
+    oneLiner:
+      "Manga, anime, series, and YouTube playlists that shape how I think and relax.",
+    details:
+      "I organise stories and videos by theme and recommend an order to watch so they build on each other.",
+    links: [
+      {
+        label: "View media collections",
+        href: "/collections",
+      },
+    ],
+  },
+  {
+    id: "essentials",
+    title: "Tools and essentials",
+    oneLiner:
+      "Products and setups that make day to day study, work, and training smoother.",
+    details:
+      "From must have gear to small quality of life upgrades that compound over time.",
+    links: [
+      {
+        label: "See essentials list",
+        href: "/collections#essentials",
+      },
+    ],
   },
   {
     id: "roadmap",
@@ -82,7 +104,6 @@ const lifeAspects: LifeAspect[] = [
       "Key decisions, turning points, and how I want my next decade to look.",
     details:
       "A timeline of choices like moving countries, choosing Finance and Computer Science, and building projects.",
-    links: [],
   },
 ];
 
@@ -92,8 +113,7 @@ export default function LifePage() {
       <h1 className="text-4xl font-extrabold mb-6">Life OS</h1>
       <p className="text-lg text-gray-700 mb-8">
         A snapshot of how I manage different parts of my life outside work and
-        study. Each section will link out to documents, trackers, or notes as I
-        make them public.
+        study. Some cards link out to more detailed collections and notes.
       </p>
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -132,8 +152,6 @@ export default function LifePage() {
                     <a
                       key={link.href}
                       href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
                       className="text-xs text-amber-700 underline hover:text-amber-500"
                     >
                       {link.label}
