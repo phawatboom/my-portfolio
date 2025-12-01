@@ -35,14 +35,17 @@ const lifeAspects: LifeAspect[] = [
   {
     id: "health",
     title: "Health and training",
-    oneLiner: "Keeping energy high so I can think deeply and build consistently.",
+    oneLiner: "Regular movement to keep energy high for deep work.",
     details:
-      "Strength training and paddling are my baseline. If my body feels good, everything else is easier.",
+      "I cycle through different types of exercise depending on the week, but the goal is always the same: stay clear-headed, strong, and present.",
     routines: [
-      "Strength training several times per week",
-      "Paddling and outdoor sessions with AUCC",
+      "Gym or strength sessions when I want structure",
+      "Running 3–5km for headspace",
+      "Swimming and group exercise classes at uni",
+      "Training with friends (gym, core classes)",
+      "Badminton or tennis for fun and coordination",
     ],
-    connectedTo: ["food", "explore", "roadmap"],
+    connectedTo: ["relationships", "food", "roadmap"],
   },
   {
     id: "relationships",

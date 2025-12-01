@@ -27,44 +27,15 @@ export default function AboutPage() {
       </section>
 
       {/* What I build */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">What I build</h2>
-        <p className="text-sm text-gray-700">
-          I like projects that require rigorous data work, careful modelling,
-          and clean interfaces. A few examples.
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">What I build</h2>
+        <p className="text-sm text-gray-700 max-w-xl">
+          I spend most of my time on three highlighted projects:{" "}
+          <span className="font-medium">Capital Compass</span>,{" "}
+          <span className="font-medium">WorkLaunch</span>, and the{" "}
+          <span className="font-medium">AUCC website rebuild</span>. They represent
+          how I think about markets, data, and building for real users.
         </p>
-        <div className="space-y-4">
-          <div className="rounded-2xl bg-white border shadow-sm p-4">
-            <h3 className="text-sm font-semibold text-gray-900">
-              Trading and market systems
-            </h3>
-            <p className="text-sm text-gray-700 mt-1">
-              An algorithmic trading framework that combines EMA and MACD with
-              RSI filters and risk controls, and tools for multi horizon stock
-              movement classification and backtesting.
-            </p>
-          </div>
-          <div className="rounded-2xl bg-white border shadow-sm p-4">
-            <h3 className="text-sm font-semibold text-gray-900">
-              Valuation and decision tools
-            </h3>
-            <p className="text-sm text-gray-700 mt-1">
-              A valuation platform that supports DCF, DDM, and market multiples,
-              enriched with financial health scoring, ML forecasts, and risk
-              diagnostics that help investors compare scenarios quickly.
-            </p>
-          </div>
-          <div className="rounded-2xl bg-white border shadow-sm p-4">
-            <h3 className="text-sm font-semibold text-gray-900">
-              Skills and career intelligence
-            </h3>
-            <p className="text-sm text-gray-700 mt-1">
-              Worklaunch, an AI powered career recommender that maps resumes to
-              more than 13,000 ESCO occupations using embeddings, semantic
-              search, and skill graphs, turning free text into concrete options.
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* How I learn and work */}

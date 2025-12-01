@@ -10,9 +10,13 @@ export type Project = {
   longDescription?: string;
   year: number;
   domain: ProjectDomain;
+  category?: string;
   techStack: string[];
   tags: string[];
   impact: string;
+  challenges?: string;
+  learnings?: string;
+  status?: string;
   highlight: boolean; // true = show on home page
   relatedCourses?: string[]; // e.g. ["COMPSCI 335", "FINANCE 251"]
   links: {
@@ -47,19 +51,26 @@ export const projects: Project[] = [
   {
     slug: "worklaunch",
     title: "WorkLaunch",
-    oneLiner: "AI powered skills and occupation matching platform.",
-    descriptionShort:
-      "Maps resume skills to ESCO occupations using embeddings to suggest career paths and highlight skill gaps. (Confidential / Internal Tool)",
     year: 2025,
     domain: "ml",
-    techStack: ["Python", "Flask or FastAPI", "NLP", "PostgreSQL", "Qdrant"],
-    tags: ["NLP", "Embeddings", "Career tech"],
-    impact:
-      "Gives users structured career suggestions and concrete skill gaps instead of generic job matches.",
+    category: "AI & skills intelligence",
     highlight: true,
-    relatedCourses: ["COMPSCI 361"],
+    tags: ["NLP", "Embeddings", "Career tech"],
+    oneLiner: "AI powered skills and occupation matching platform.",
+    descriptionShort:
+      "Maps resume skills to ESCO occupations using embeddings to suggest career paths and highlight skill gaps. Confidential project, developed under a paid contract.",
+    longDescription:
+      "WorkLaunch is an internal AI career intelligence tool. It ingests resumes, maps skills to the ESCO skills and occupation taxonomy using embeddings, and then recommends career paths, adjacent roles, and concrete skill gaps to close. Because this work was done under a paid contract, I only show high-level architecture and outcomes here, not internal data or full UI flows.",
+    impact:
+      "Replaces ad-hoc career advice with structured, data-driven suggestions based on real skill profiles. Helps users see transferable skills, identify capability gaps, and explore realistic target roles instead of generic job matches.",
+    challenges:
+      "Designing a skills graph on top of ESCO, handling noisy resumes, and making embedding-based recommendations that stayed stable across different CV formats. I also had to work within confidentiality constraints while still delivering explainable outputs.",
+    learnings:
+      "How to design and populate a skills and occupation graph using embeddings; how to build production-ready ETL pipelines around ESCO; and how to work with a client under a contract while keeping the system maintainable and extensible.",
+    techStack: ["Python", "Flask or FastAPI", "NLP", "PostgreSQL", "Qdrant"],
+    status: "Internal tool · confidential",
     links: {
-      // Confidential project
+      // no public links, or leave out entirely
     },
   },
   {

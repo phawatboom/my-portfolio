@@ -28,10 +28,12 @@ export default function HomePage() {
             </span>
           </h2>
 
-          <p className="text-lg text-gray-700 max-w-xl">
-            I design and ship data driven tools, from trading algorithms and
-            valuation dashboards to skills intelligence systems that help people
-            make better decisions about money, careers, and risk.
+          <p className="text-sm text-gray-600 max-w-xl">
+            Most of my focus is on three highlighted projects:{" "}
+            <span className="font-medium">Capital Compass</span> (quant and beta
+            forecasting), <span className="font-medium">WorkLaunch</span> (AI career
+            intelligence), and the <span className="font-medium">AUCC website
+            rebuild</span> (real users, real content, production-quality engineering).
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -168,11 +170,6 @@ export default function HomePage() {
                 <p className="text-[11px] text-gray-500">
                   {project.techStack.join(" · ")}
                 </p>
-                {project.relatedCourses && project.relatedCourses.length > 0 && (
-                  <p className="text-[11px] text-gray-500">
-                    Based on {project.relatedCourses.join(", ")}
-                  </p>
-                )}
                 <div className="pt-2 mt-auto flex justify-between items-center">
                   <Link
                     href={`/projects/${project.slug}`}

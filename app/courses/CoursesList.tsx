@@ -22,7 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, FileText, GraduationCap } from "lucide-react";
 
-// order semesters manually so they appear most recent first
+// semesters in desired order (most recent first)
 const termOrder: string[] = [
   "2025 Semester Two",
   "2025 Semester One",
@@ -30,18 +30,17 @@ const termOrder: string[] = [
   "2024 Semester One",
   "2023 Semester Two",
   "2023 Semester One",
-  "2022 Semester Two",
 ];
 
 function getTermRank(term: string): number {
-  const index = termOrder.indexOf(term);
-  return index === -1 ? termOrder.length + 1 : index;
+  const idx = termOrder.indexOf(term);
+  return idx === -1 ? termOrder.length + 1 : idx;
 }
 
 function gradeBadgeColor(grade?: Course["grade"]) {
   if (!grade) return "";
   if (grade === "A+" || grade === "A") {
-    return "border-[#DDAA3B] text-[#DDAA3B]"; // gold outline
+    return "border-[#DDAA3B] text-[#DDAA3B]";
   }
   if (grade === "A-" || grade === "B+") {
     return "border-gray-400 text-gray-700";
@@ -63,13 +62,12 @@ export default function CoursesList() {
       if (!groups.has(term)) groups.set(term, []);
       groups.get(term)!.push(course);
     }
-    // sort each term's courses alphabetically by code
+    // sort each term's courses by code
     for (const list of groups.values()) {
       list.sort((a, b) => a.code.localeCompare(b.code));
     }
-    // return sorted array of [term, courses[]]
     return Array.from(groups.entries()).sort(
-      ([t1], [t2]) => getTermRank(t1) - getTermRank(t2)
+      ([t1], [t2]) => getTermRank(t1) - getTermRank(t2),
     );
   }, [visibleCourses]);
 
@@ -89,7 +87,7 @@ export default function CoursesList() {
             {termCourses.map((course) => (
               <Card
                 key={course.code}
-                className="relative cursor-pointer hover:bg-accent/50 transition-colors flex flex-col h-full"
+                className="relative cursor-pointer hover:bg-accent/40 transition-colors flex flex-col h-full"
                 onClick={() => setSelectedCourse(course)}
               >
                 {/* Grade badge */}
@@ -97,7 +95,7 @@ export default function CoursesList() {
                   <div className="absolute top-2 right-2">
                     <span
                       className={
-                        "text-[10px] px-2 py-0.5 rounded-full border bg-white/80 backdrop-blur " +
+                        "text-[10px] px-2 py-0.5 rounded-full border bg-white/90 backdrop-blur " +
                         gradeBadgeColor(course.grade)
                       }
                     >
@@ -119,6 +117,7 @@ export default function CoursesList() {
                     {course.title}
                   </CardDescription>
                 </CardHeader>
+
                 <CardContent className="p-4 pt-0 mt-auto">
                   <div className="text-xs text-muted-foreground flex items-center gap-1 mt-2">
                     <GraduationCap className="h-3 w-3" />
@@ -143,7 +142,7 @@ export default function CoursesList() {
         </div>
       )}
 
-      {/* Dialog */}
+      {/* Course detail dialog */}
       <Dialog
         open={!!selectedCourse}
         onOpenChange={(open) => !open && setSelectedCourse(null)}
@@ -182,7 +181,7 @@ export default function CoursesList() {
               selectedCourse.keyTopics.length > 0 && (
                 <div>
                   <h4 className="text-sm font-medium mb-2 flex items-center gap-2">
-                    <BookOpen className="h-4 w-4" /> Key Topics
+                    <BookOpen className="h-4 w-4" /> Key topics
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedCourse.keyTopics.map((topic) => (
