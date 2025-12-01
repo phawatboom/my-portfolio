@@ -24,17 +24,24 @@ import { BookOpen, FileText, GraduationCap } from "lucide-react";
 
 // semesters in desired order (most recent first)
 const termOrder: string[] = [
+  "2026 Semester One",
   "2025 Semester Two",
   "2025 Semester One",
   "2024 Semester Two",
   "2024 Semester One",
   "2023 Semester Two",
   "2023 Semester One",
+  "2022 Semester Two",
 ];
 
 function getTermRank(term: string): number {
   const idx = termOrder.indexOf(term);
   return idx === -1 ? termOrder.length + 1 : idx;
+}
+
+// Only A / A+ get a gold badge on the card
+function shouldShowCardBadge(grade?: Course["grade"]) {
+  return grade === "A+" || grade === "A";
 }
 
 function gradeBadgeColor(grade?: Course["grade"]) {
@@ -67,7 +74,7 @@ export default function CoursesList() {
       list.sort((a, b) => a.code.localeCompare(b.code));
     }
     return Array.from(groups.entries()).sort(
-      ([t1], [t2]) => getTermRank(t1) - getTermRank(t2),
+      ([t1], [t2]) => getTermRank(t1) - getTermRank(t2)
     );
   }, [visibleCourses]);
 
@@ -90,8 +97,8 @@ export default function CoursesList() {
                 className="relative cursor-pointer hover:bg-accent/40 transition-colors flex flex-col h-full"
                 onClick={() => setSelectedCourse(course)}
               >
-                {/* Grade badge */}
-                {course.grade && (
+                {/* Grade badge: card shows only A / A+ */}
+                {course.grade && shouldShowCardBadge(course.grade) && (
                   <div className="absolute top-2 right-2">
                     <span
                       className={
@@ -164,23 +171,29 @@ export default function CoursesList() {
                 </span>
               )}
             </DialogTitle>
-            <DialogDescription className="flex flex-col gap-1 mt-2">
-              <span className="flex items-center gap-2">
-                <GraduationCap className="h-4 w-4" />
-                {selectedCourse?.institution}
-              </span>
-              <span className="text-xs">{selectedCourse?.term}</span>
+            <DialogDescription className="flex flex-col gap-1 mt-2 text-sm">
+              <span className="text-gray-700">{selectedCourse?.term}</span>
               <span className="text-xs text-gray-500">
-                {selectedCourse?.discipline}
+                {selectedCourse?.institution}
               </span>
             </DialogDescription>
           </DialogHeader>
 
-          <div className="space-y-4 py-4">
+          <div className="space-y-6 py-4">
+            {/* Overview / description (placeholder safe) */}
+            <div>
+              <h4 className="text-sm font-semibold mb-2">Overview</h4>
+              <p className="text-sm text-gray-700">
+                {selectedCourse?.description ??
+                  "Short course description placeholder. You can summarise what the course focused on and what you gained from it."}
+              </p>
+            </div>
+
+            {/* Topics */}
             {selectedCourse?.keyTopics &&
               selectedCourse.keyTopics.length > 0 && (
                 <div>
-                  <h4 className="text-sm font-medium mb-2 flex items-center gap-2">
+                  <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
                     <BookOpen className="h-4 w-4" /> Key topics
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -193,10 +206,11 @@ export default function CoursesList() {
                 </div>
               )}
 
+            {/* Artefacts */}
             {selectedCourse?.artefacts &&
               selectedCourse.artefacts.length > 0 && (
                 <div>
-                  <h4 className="text-sm font-medium mb-2 flex items-center gap-2">
+                  <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
                     <FileText className="h-4 w-4" /> Resources
                   </h4>
                   <div className="grid gap-2">
@@ -211,8 +225,7 @@ export default function CoursesList() {
                         <span className="font-medium">
                           {item.type === "cheatsheet"
                             ? "Cheatsheet"
-                            : "Assignment"}
-                          {": "}
+                            : "Assignment"}{" "}
                           {item.label}
                         </span>
                         <span className="text-xs text-muted-foreground">

@@ -29,12 +29,12 @@ export default function AboutPage() {
       {/* What I build */}
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">What I build</h2>
-        <p className="text-sm text-gray-700 max-w-xl">
-          I spend most of my time on three highlighted projects:{" "}
-          <span className="font-medium">Capital Compass</span>,{" "}
-          <span className="font-medium">WorkLaunch</span>, and the{" "}
-          <span className="font-medium">AUCC website rebuild</span>. They represent
-          how I think about markets, data, and building for real users.
+        <p className="text-sm text-gray-600 max-w-xl">
+          Most of my focus is on three highlighted projects:{" "}
+          <span className="font-medium">Capital Compass</span> (quant and beta
+          forecasting), <span className="font-medium">WorkLaunch</span> (AI career
+          intelligence), and the <span className="font-medium">AUCC website
+          rebuild</span> (real users, real content, production-quality engineering).
         </p>
       </section>
 

@@ -111,11 +111,12 @@ export default function HomePage() {
           <h3 className="text-sm font-semibold text-gray-900 mb-2">
             What I am building now
           </h3>
-          <p className="text-sm text-gray-600">
-            Most of my energy is on three flagship projects: Capital Compass
-            (quant & beta forecasting), the AUCC website (real users, real
-            content), and a stock valuation platform that makes DCF and
-            scenario analysis feel interactive.
+          <p className="text-sm text-gray-600 max-w-xl">
+            Most of my focus is on three highlighted projects:{" "}
+            <span className="font-medium">Capital Compass</span> (quant and beta
+            forecasting), <span className="font-medium">WorkLaunch</span> (AI career
+            intelligence), and the <span className="font-medium">AUCC website
+            rebuild</span> (real users, real content, production-quality engineering).
           </p>
         </div>
         <div className="bg-white rounded-2xl p-5 shadow-sm border">

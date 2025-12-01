@@ -55,17 +55,6 @@ export default function ProjectsPage() {
                     </span>{" "}
                     {project.techStack.join(" · ")}
                   </p>
-                  {project.relatedCourses &&
-                    project.relatedCourses.length > 0 && (
-                      <p>
-                        <span className="font-semibold text-gray-700">
-                          Rooted in:
-                        </span>{" "}
-                        {project
-                          .relatedCourses
-                          .join(", ")}
-                      </p>
-                    )}
                 </div>
 
                 <div className="pt-2">

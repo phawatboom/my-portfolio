@@ -10,6 +10,8 @@ export type Project = {
   longDescription?: string;
   year: number;
   domain: ProjectDomain;
+  type?: string;      // e.g. "Commercial Contract", "University Capstone"
+  duration?: string;  // e.g. "Feb 2025 - Present"
   category?: string;
   techStack: string[];
   tags: string[];
@@ -35,6 +37,8 @@ export const projects: Project[] = [
       "Developed quantitative tools to forecast stock beta and mean reversion using ElasticNet models, featuring a web dashboard for signal exploration.",
     year: 2025,
     domain: "ml",
+    type: "University Capstone",
+    duration: "Feb 2025 - Present",
     techStack: ["Python", "Pandas", "Scikit-learn", "Next.js", "Django", "PostgreSQL"],
     tags: ["Mean reversion", "Factor models", "Time series", "Quantitative Finance"],
     impact:
@@ -53,6 +57,8 @@ export const projects: Project[] = [
     title: "WorkLaunch",
     year: 2025,
     domain: "ml",
+    type: "Commercial Contract",
+    duration: "Jan 2025 - Mar 2025",
     category: "AI & skills intelligence",
     highlight: true,
     tags: ["NLP", "Embeddings", "Career tech"],
@@ -81,6 +87,8 @@ export const projects: Project[] = [
       "A modern, content-managed website for the Auckland University Canoe Club, built with Next.js 15 and Payload CMS. Developed by WDCC in 2025.",
     year: 2025,
     domain: "fullstack",
+    type: "Volunteer / WDCC",
+    duration: "Jan 2025 - Present",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Payload CMS", "PostgreSQL", "AWS S3", "Fly.io"],
     tags: ["Full stack", "CMS", "Club website"],
     impact:
@@ -102,6 +110,8 @@ export const projects: Project[] = [
       "Implemented rule based and statistical strategies for simulated products, balancing inventory risk and PnL.",
     year: 2024,
     domain: "trading",
+    type: "Competition",
+    duration: "Apr 2024",
     techStack: ["Python", "Pandas", "Backtesting framework"],
     tags: ["Market making", "Stat arb", "Trading"],
     impact:
@@ -122,6 +132,8 @@ export const projects: Project[] = [
       "Collective Kitchen OS is an AI powered meal planning system that adapts to real households. It combines nutrition goals, ingredient costs, kitchen equipment, local availability, and personal food preferences to generate optimised weekly meal plans and grocery lists.",
     year: 2025,
     domain: "ml",
+    type: "Personal Project",
+    duration: "2025",
     techStack: [
       "React",
       "TypeScript",
@@ -156,6 +168,8 @@ export const projects: Project[] = [
       "Valuation platform that helps investors assess stocks using DCF, DDM, and Market Multiples, with ML-based forecasts and risk diagnostics.",
     year: 2025,
     domain: "trading",
+    type: "Personal Project",
+    duration: "2025",
     techStack: ["Python", "Machine Learning", "Financial Modelling"],
     tags: ["Valuation", "DCF", "Machine Learning", "Finance"],
     impact:

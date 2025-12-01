@@ -37,7 +37,7 @@ const lifeAspects: LifeAspect[] = [
     title: "Health and training",
     oneLiner: "Regular movement to keep energy high for deep work.",
     details:
-      "I cycle through different types of exercise depending on the week, but the goal is always the same: stay clear-headed, strong, and present.",
+      "I rotate through different types of exercise depending on the week, but the goal is always the same: stay clear-headed, strong, and present.",
     routines: [
       "Gym or strength sessions when I want structure",
       "Running 3–5km for headspace",
@@ -90,18 +90,21 @@ const lifeAspects: LifeAspect[] = [
   },
   {
     id: "media",
-    title: "Media and inspiration",
-    oneLiner:
-      "Manga, anime, series, and YouTube playlists that shape how I think and relax.",
+    title: "Manga & Anime",
+    oneLiner: "Stories with strong systems, world-building, and character arcs.",
     details:
-      "I group stories and videos by theme and recommend an order so they build on each other instead of becoming noise.",
-    links: [
-      {
-        label: "View media collections",
-        href: "/collections",
-      },
+      "I like stories that feel like good systems design: clear rules, clever progression, and characters who grow with constraints.",
+    routines: [
+      "Manga – Solo Leveling (clean pacing and iconic progression)",
+      "Manga – Overgeared (great growth system and character depth)",
+      "Manga – The Greatest Estate Developer (strategy-focused and creative)",
+      "Anime – Slime (Tensura) (wholesome, strategic world-building)",
+      "Anime – Kaiju No. 8 (sharp action and likeable characters)",
+      "Anime – Jujutsu Kaisen (elite animation and fight choreography)",
+      "Anime – Romantic Killer (light, fun, character-driven)",
+      "Anime – SAKAMOTO DAYS (high-concept action, anime-in-progress)",
     ],
-    connectedTo: ["investing", "relationships", "food"],
+    connectedTo: ["explore", "investing", "roadmap"],
   },
   {
     id: "essentials",

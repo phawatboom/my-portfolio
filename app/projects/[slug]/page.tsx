@@ -151,16 +151,16 @@ export default async function ProjectDetailPage({
           <div className="rounded-2xl border bg-white shadow-sm p-5 space-y-3">
             <h3 className="text-sm font-semibold mb-1">Project snapshot</h3>
             <dl className="space-y-2 text-sm text-gray-700">
-              {project!.domain && (
+              {project!.type && (
                 <div className="flex justify-between gap-4">
-                  <dt className="text-gray-500">Domain</dt>
-                  <dd className="font-medium text-right">{project!.domain}</dd>
+                  <dt className="text-gray-500">Type</dt>
+                  <dd className="font-medium text-right">{project!.type}</dd>
                 </div>
               )}
-              {project!.year && (
+              {project!.duration && (
                 <div className="flex justify-between gap-4">
-                  <dt className="text-gray-500">Year</dt>
-                  <dd className="text-right">{project!.year}</dd>
+                  <dt className="text-gray-500">Duration</dt>
+                  <dd className="text-right">{project!.duration}</dd>
                 </div>
               )}
               {project!.status && (
