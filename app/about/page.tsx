@@ -190,7 +190,7 @@ export default function AboutPage() {
           For roles in AI, software, or trading, reach me at{" "}
           <a
             href="mailto:pboomhtsaengs3@gmail.com"
-            className="text-amber-700 underline underline-offset-4 hover:text-amber-600"
+            className="text-[#DDAA3B] underline underline-offset-4 hover:text-[#C0922F]"
           >
             pboomhtsaengs3@gmail.com
           </a>

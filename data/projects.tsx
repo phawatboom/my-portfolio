@@ -64,7 +64,7 @@ export const projects: Project[] = [
   },
   {
     slug: "aucc-website",
-    title: "AUCC Website Revamp",
+    title: "AUCC Website",
     oneLiner: "Dynamic club website for the Auckland University Canoe Club.",
     descriptionShort:
       "A modern, content-managed website for the Auckland University Canoe Club, built with Next.js 15 and Payload CMS. Developed by WDCC in 2025.",

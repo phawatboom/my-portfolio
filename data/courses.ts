@@ -21,6 +21,7 @@ export type Course = {
   keyTopics: string[];
   tags: string[];
   artefacts: CourseArtefact[];
+  grade?: "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "Pass";
 };
 
 // helper so you can visually see featured courses first if you want to sort later
@@ -332,10 +333,11 @@ export const courses: Course[] = [
   {
     code: "COMPSCI 361",
     title: "Machine Learning",
-    term: "2025 Semester One",
+    term: "2024 Semester Two",
     institution: uoa,
     discipline: "Computer Science",
     featured: true,
+    grade: "A+",
     keyTopics: [],
     tags: [],
     artefacts: [],
@@ -354,10 +356,11 @@ export const courses: Course[] = [
   {
     code: "FINANCE 351",
     title: "Advanced Financial Management",
-    term: "2025 Semester One",
+    term: "2024 Semester Two",
     institution: uoa,
     discipline: "Finance",
     featured: true,
+    grade: "A",
     keyTopics: [],
     tags: [],
     artefacts: [],

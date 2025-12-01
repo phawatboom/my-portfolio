@@ -185,12 +185,15 @@ export default function ResourcesPage() {
   return (
     <div className="max-w-5xl mx-auto space-y-10">
       {/* Hero */}
-      <section className="pt-6 space-y-3">
+      <section className="pt-6 space-y-2">
         <h1 className="text-4xl font-extrabold">Learning resources</h1>
         <p className="text-lg text-gray-700 max-w-2xl">
           A small, opinionated library I keep coming back to. If you are
           preparing for interviews, building products, or going deeper into AI
           and markets, this is where I would start.
+        </p>
+        <p className="text-xs text-gray-500">
+          Last updated: September 2025
         </p>
       </section>
 
@@ -206,7 +209,7 @@ export default function ResourcesPage() {
               href={item.url}
               target="_blank"
               rel="noreferrer"
-              className="bg-gray-900 text-white rounded-2xl p-4 border border-gray-800 hover:border-amber-400 hover:-translate-y-0.5 transition-transform"
+              className="bg-gray-900 text-white rounded-2xl p-4 border border-gray-800 hover:border-[#DDAA3B] hover:-translate-y-0.5 transition-transform"
             >
               <p className="font-semibold mb-1">{item.label}</p>
               {item.note && (
@@ -243,7 +246,7 @@ export default function ResourcesPage() {
                         href={link.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-baseline gap-2 border-b border-gray-300 pb-0.5 text-gray-900 hover:text-amber-700 hover:border-amber-400 transition-colors"
+                        className="inline-flex items-baseline gap-2 border-b border-gray-300 pb-0.5 text-gray-900 hover:text-[#DDAA3B] hover:border-[#DDAA3B] transition-colors"
                       >
                         <span>{link.label}</span>
                       </a>
@@ -269,7 +272,7 @@ export default function ResourcesPage() {
                           href={link.url}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-baseline gap-2 border-b border-gray-200 pb-0.5 text-gray-800 hover:text-amber-700 hover:border-amber-300 transition-colors"
+                          className="inline-flex items-baseline gap-2 border-b border-gray-200 pb-0.5 text-gray-800 hover:text-[#DDAA3B] hover:border-[#DDAA3B] transition-colors"
                         >
                           <span>{link.label}</span>
                         </a>

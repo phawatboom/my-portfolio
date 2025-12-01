@@ -43,7 +43,7 @@ export default async function ProjectDetailPage({
     <div className="max-w-3xl mx-auto">
       <Link
         href="/projects"
-        className="text-sm text-amber-500 underline hover:text-amber-600"
+        className="text-sm text-[#DDAA3B] underline hover:text-[#C0922F]"
       >
         ← Back to projects
       </Link>
@@ -80,7 +80,7 @@ export default async function ProjectDetailPage({
 
       <section className="mb-6">
         <h2 className="text-lg font-semibold mb-2">Links</h2>
-        <ul className="list-disc list-inside text-sm text-amber-600">
+        <ul className="list-disc list-inside text-sm text-[#DDAA3B]">
           {project.links.github && (
             <li>
               <a

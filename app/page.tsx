@@ -37,13 +37,13 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link
               href="/projects"
-              className="px-5 py-2.5 rounded-full bg-black text-sm font-medium text-white hover:bg-gray-900 transition-colors"
+              className="px-5 py-2.5 rounded-full bg-gray-900 text-sm font-medium text-white hover:bg-black transition-colors"
             >
               View projects
             </Link>
             <Link
               href="/about"
-              className="text-sm text-gray-700 underline underline-offset-4 hover:text-gray-900"
+              className="text-sm text-gray-700 underline underline-offset-4 hover:text-[#DDAA3B]"
             >
               Learn more about me
             </Link>
@@ -65,8 +65,7 @@ export default function HomePage() {
         {/* Right: “signal card” visual */}
         <div className="relative">
           <div
-            className="absolute inset-0 rounded-3xl bg-gradient-to-br
-                       from-amber-200 via-rose-100 to-sky-200
+            className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top,_#DDAA3B,_transparent_60%)]
                        blur-2xl opacity-70"
             aria-hidden="true"
           />
@@ -134,7 +133,7 @@ export default function HomePage() {
           <h3 className="text-2xl font-semibold">Highlighted projects</h3>
           <Link
             href="/projects"
-            className="text-sm text-gray-700 underline underline-offset-4 hover:text-gray-900"
+            className="text-sm text-gray-700 underline underline-offset-4 hover:text-[#DDAA3B]"
           >
             View all projects
           </Link>
@@ -154,7 +153,7 @@ export default function HomePage() {
             >
               {/* Visual placeholder – later replace with real thumb */}
               <div className="h-28 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 relative">
-                <div className="absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity bg-[radial-gradient(circle_at_top,_#fbbf24,_transparent_55%)]" />
+                <div className="absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity bg-[radial-gradient(circle_at_top,_#DDAA3B,_transparent_55%)]" />
               </div>
               <div className="flex-1 flex flex-col p-4 gap-2">
                 <div className="flex items-center justify-between gap-2">
@@ -177,7 +176,7 @@ export default function HomePage() {
                 <div className="pt-2 mt-auto flex justify-between items-center">
                   <Link
                     href={`/projects/${project.slug}`}
-                    className="text-sm text-amber-700 underline underline-offset-4 group-hover:text-amber-600"
+                    className="text-sm text-gray-900 border-b border-gray-300 pb-0.5 hover:text-[#DDAA3B] hover:border-[#DDAA3B]"
                   >
                     View details
                   </Link>
@@ -194,7 +193,7 @@ export default function HomePage() {
           <h3 className="text-2xl font-semibold">Life outside work</h3>
           <Link
             href="/life"
-            className="text-sm text-gray-700 underline underline-offset-4 hover:text-gray-900"
+            className="text-sm text-gray-700 underline underline-offset-4 hover:text-[#DDAA3B]"
           >
             See Life OS
           </Link>
@@ -236,40 +235,42 @@ export default function HomePage() {
       </section>
 
       {/* Signals / contact */}
-      <section className="grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 items-start pb-10">
-        <div className="bg-white rounded-2xl border shadow-sm p-6 space-y-4">
-          <h3 className="text-xl font-semibold mb-1">Signals that matter</h3>
-          <p className="text-sm text-gray-700">
-            I care less about buzzwords and more about whether a tool actually
-            improves decisions and outcomes.
-          </p>
-          <div className="grid grid-cols-2 gap-4 text-sm">
-            <div>
-              <p className="text-xs text-gray-500 uppercase tracking-[0.18em]">
-                Focus
-              </p>
-              <p className="font-semibold">AI, markets, product thinking</p>
-            </div>
-            <div>
-              <p className="text-xs text-gray-500 uppercase tracking-[0.18em]">
-                Strengths
-              </p>
-              <p className="font-semibold">Systems, clarity, iteration</p>
+      <section className="bg-gray-950 text-white rounded-3xl px-6 py-8 md:px-8 md:py-10 space-y-6">
+        <div className="grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 items-start">
+          <div className="bg-gray-900 rounded-2xl border border-gray-800 shadow-sm p-6 space-y-4">
+            <h3 className="text-xl font-semibold mb-1">Signals that matter</h3>
+            <p className="text-sm text-gray-300">
+              I care less about buzzwords and more about whether a tool actually
+              improves decisions and outcomes.
+            </p>
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <p className="text-xs text-gray-500 uppercase tracking-[0.18em]">
+                  Focus
+                </p>
+                <p className="font-semibold mt-1">AI, markets, product thinking</p>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 uppercase tracking-[0.18em]">
+                  Strengths
+                </p>
+                <p className="font-semibold mt-1">Systems, clarity, iteration</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="bg-gray-900 text-white rounded-2xl p-6 border border-gray-800">
-          <h3 className="text-xl font-semibold mb-2">Open to opportunities</h3>
-          <p className="text-sm text-gray-200 mb-4">
-            I am interested in AI or ML Engineer roles, full stack product
-            engineering, and quantitative or FinTech analyst roles.
-          </p>
-          <Link
-            href="mailto:pboomhtsaengs3@gmail.com"
-            className="inline-flex items-center text-sm font-medium underline underline-offset-4"
-          >
-            Email me to discuss a role
-          </Link>
+          <div className="bg-black rounded-2xl border border-gray-800 p-6">
+            <h3 className="text-xl font-semibold mb-2">Open to opportunities</h3>
+            <p className="text-sm text-gray-300 mb-4">
+              I am interested in AI or ML Engineer roles, full stack product
+              engineering, and quantitative or FinTech analyst roles.
+            </p>
+            <Link
+              href="mailto:pboomhtsaengs3@gmail.com"
+              className="inline-flex items-center text-sm font-medium underline underline-offset-4 hover:text-[#DDAA3B]"
+            >
+              Email me to discuss a role
+            </Link>
+          </div>
         </div>
       </section>
     </div>

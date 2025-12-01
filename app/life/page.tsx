@@ -191,7 +191,7 @@ export default function LifePage() {
                             <a
                               key={link.href}
                               href={link.href}
-                              className="text-xs text-gray-900 border-b border-gray-300 pb-0.5 hover:text-amber-700 hover:border-amber-400"
+                              className="text-xs text-gray-900 border-b border-gray-300 pb-0.5 hover:text-[#DDAA3B] hover:border-[#DDAA3B]"
                             >
                               {link.label}
                             </a>

@@ -71,7 +71,7 @@ export default function ProjectsPage() {
                 <div className="pt-2">
                   <Link
                     href={`/projects/${project.slug}`}
-                    className="inline-flex items-center text-sm text-gray-900 border-b border-gray-300 pb-0.5 hover:text-amber-700 hover:border-amber-400"
+                    className="inline-flex items-center text-sm text-gray-900 border-b border-gray-300 pb-0.5 hover:text-[#DDAA3B] hover:border-[#DDAA3B]"
                   >
                     <span>View case study</span>
                     <span className="ml-1 text-xs">↗</span>
