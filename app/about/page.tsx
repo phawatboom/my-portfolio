@@ -136,7 +136,7 @@ export default function AboutPage() {
       </section>
 
       {/* Life OS, simplified cards */}
-      <section className="space-y-4">
+      {/* <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Life OS</h2>
         <p className="text-sm text-gray-700">
           A few simple systems that keep me energized, curious, and grounded.
@@ -167,7 +167,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* What I want to build */}
       <section className="space-y-3 border-t pt-8">
