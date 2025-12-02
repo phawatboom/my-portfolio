@@ -56,11 +56,10 @@ function gradeBadgeColor(grade?: Course["grade"]) {
 }
 
 export default function CoursesList() {
-  const [showAll, setShowAll] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
-  const featured = courses.filter((course) => course.featured);
-  const visibleCourses = showAll ? courses : featured;
+  // show all courses (no filtering)
+  const visibleCourses = courses;
 
   const coursesByTerm = useMemo(() => {
     const groups = new Map<string, Course[]>();
@@ -69,7 +68,6 @@ export default function CoursesList() {
       if (!groups.has(term)) groups.set(term, []);
       groups.get(term)!.push(course);
     }
-    // sort each term's courses by code
     for (const list of groups.values()) {
       list.sort((a, b) => a.code.localeCompare(b.code));
     }
@@ -136,18 +134,6 @@ export default function CoursesList() {
           </div>
         </section>
       ))}
-
-      {courses.length > featured.length && (
-        <div className="flex justify-center mt-4">
-          <Button
-            variant="outline"
-            onClick={() => setShowAll(!showAll)}
-            className="min-w-[200px]"
-          >
-            {showAll ? "Show Less" : `Show All Courses (${courses.length})`}
-          </Button>
-        </div>
-      )}
 
       {/* Course detail dialog */}
       <Dialog

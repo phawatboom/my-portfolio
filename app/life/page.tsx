@@ -139,12 +139,27 @@ function getTitleById(id: LifeAspectId) {
 export default function LifePage() {
   return (
     <div className="max-w-6xl mx-auto space-y-10">
-      <section className="pt-6 space-y-3">
-        <h1 className="text-4xl font-extrabold">Life OS</h1>
-        <p className="text-lg text-gray-700 max-w-2xl">
-          A more detailed look at how I structure different parts of my life.
-          One area at a time, with the connections between them visible.
-        </p>
+      {/* Hero with visual */}
+      <section className="pt-6 grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 items-start">
+        <div className="space-y-3">
+          <h1 className="text-4xl font-extrabold">Life OS</h1>
+          <p className="text-lg text-gray-700 max-w-2xl">
+            A more detailed look at how I structure different parts of my life.
+            One area at a time, with the connections between them visible.
+          </p>
+        </div>
+
+        {/* Photo / collage placeholder */}
+        <div className="h-44 md:h-56 rounded-3xl border bg-white shadow-sm overflow-hidden relative">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#DDAA3B,_transparent_55%)] opacity-70" />
+          <div className="relative h-full w-full flex flex-col justify-between p-4 text-xs text-gray-800">
+            <p className="font-semibold">Future Life OS photo slot</p>
+            <p className="max-w-[90%] text-gray-600">
+              You could later swap this for a small collage: cooking, markets
+              setup, and training with friends, to match the sections below.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Vertical line to hint at connections (desktop) */}

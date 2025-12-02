@@ -7,22 +7,48 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto py-12 space-y-12">
-      {/* Intro */}
-      <section className="space-y-5">
-        <h1 className="text-4xl font-extrabold">About me</h1>
-        <p className="text-lg text-gray-700">
-          I am a final year Finance and Computer Science student who builds at
-          the intersection of software engineering, applied machine learning,
-          and financial analysis. My goal is to create tools that help people
-          make clearer decisions about money, careers, and risk.
-        </p>
-        <div className="border-l-4 border-black pl-4 text-sm text-gray-700">
-          <p>
-            Long term, I want to grow into a builder and leader who uses AI and
-            data to solve real problems that reduce inequality and improve access
-            to basic needs.
+    <div className="max-w-4xl mx-auto py-10 space-y-12">
+      {/* Intro + photo side by side */}
+      <section className="grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 items-start">
+        <div className="space-y-5">
+          <h1 className="text-4xl font-extrabold">About me</h1>
+          <p className="text-lg text-gray-700">
+            I am a final year Finance and Computer Science student who builds at
+            the intersection of software engineering, applied machine learning,
+            and financial analysis. My goal is to create tools that help people
+            make clearer decisions about money, careers, and risk.
           </p>
+          <div className="border-l-4 border-black pl-4 text-sm text-gray-700">
+            <p>
+              Long term, I want to grow into a builder and leader who uses AI and
+              data to solve real problems that reduce inequality and improve access
+              to basic needs.
+            </p>
+          </div>
+        </div>
+
+        {/* Photo / visual placeholder */}
+        <div className="h-48 md:h-64 rounded-3xl border bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 relative overflow-hidden shadow-sm">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#DDAA3B,_transparent_55%)] opacity-60" />
+          <div className="relative h-full w-full flex items-end justify-start p-4">
+            <p className="text-xs text-gray-200 max-w-[80%]">
+              Placeholder for a portrait or lifestyle photo. Swap this block for
+              a{" "}
+              <span className="font-mono text-[11px]">
+                &lt;Image /&gt;
+              </span>{" "}
+              component when you have one.
+            </p>
+          </div>
+          {/* Example when you are ready:
+          <Image
+            src="/me.jpg"
+            alt="Phawat"
+            fill
+            className="object-cover"
+            priority
+          />
+          */}
         </div>
       </section>
 

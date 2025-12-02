@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         {/* Navigation */}
         <nav className="border-b bg-white">
-          <div className="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
+          <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3 px-5 py-3">
             {/* Brand */}
             <Link href="/" className="flex items-center gap-2">
               <span className="text-sm font-semibold tracking-[0.18em] uppercase">
@@ -40,7 +40,7 @@ export default function RootLayout({
 
             {/* Centered nav links */}
             <div className="flex-1 flex justify-center">
-              <div className="flex items-center gap-6 text-sm font-medium">
+              <div className="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-medium">
                 <Link href="/" className="hover:text-amber-700">
                   Home
                 </Link>
@@ -58,6 +58,9 @@ export default function RootLayout({
                 </Link>
                 <Link href="/life" className="hover:text-amber-700">
                   Life OS
+                </Link>
+                <Link href="/collections" className="hover:text-amber-700">
+                  Collections
                 </Link>
               </div>
             </div>
@@ -125,7 +128,7 @@ export default function RootLayout({
         </nav>
 
         {/* Main Content */}
-        <main className="px-5 py-10">
+        <main className="px-4 sm:px-5 py-8 sm:py-10">
           <div className="max-w-6xl mx-auto">{children}</div>
         </main>
 
