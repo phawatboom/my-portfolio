@@ -49,7 +49,7 @@ export function SiteHeader() {
                 className="group relative pb-1 transition-colors hover:text-slate-950"
               >
                 {link.label}
-                <span className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-[1px] origin-center scale-x-0 bg-slate-900 transition-transform duration-200 ease-out group-hover:scale-x-100" />
+                <span className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-[1px] origin-center scale-x-0 bg-slate-900 transition-transform duration-400 ease-out group-hover:scale-x-100" />
               </Link>
             ))}
 
@@ -78,7 +78,7 @@ export function SiteHeader() {
                   className="group relative pb-1 text-slate-600 transition-colors hover:text-slate-950"
                 >
                   {link.label}
-                  <span className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-[1px] origin-center scale-x-0 bg-slate-900 transition-transform duration-200 ease-out group-hover:scale-x-100" />
+                  <span className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-[1px] origin-center scale-x-0 bg-slate-900 transition-transform duration-400 ease-out group-hover:scale-x-100" />
                 </Link>
               ))}
             </div>
@@ -94,7 +94,7 @@ export function SiteHeader() {
               className="group relative pb-0.5 transition-colors hover:text-slate-950"
             >
               {link.label}
-              <span className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-[1px] origin-center scale-x-0 bg-slate-900 transition-transform duration-200 ease-out group-hover:scale-x-100" />
+              <span className="pointer-events-none absolute inset-x-0 -bottom-0.5 h-[1px] origin-center scale-x-0 bg-slate-900 transition-transform duration-400 ease-out group-hover:scale-x-100" />
             </Link>
           ))}
         </nav>
