@@ -87,13 +87,23 @@ export function KnowledgeGraph({ data }: KnowledgeGraphProps) {
             const n = node as GraphNode;
             switch (n.category) {
               case "Trading":
-                return "#0f766e"; // teal
+                return "#0f766e";
+              case "Finance":
+                return "#0f766e";
+              case "Quant":
+                return "#14b8a6";
+              case "Software":
+                return "#3b82f6";
+              case "AI":
+                return "#6366f1";
               case "Career":
-                return "#f59e0b"; // amber
+                return "#f59e0b";
+              case "Learning":
+                return "#e11d48";
               case "Life":
-                return "#6366f1"; // indigo
+                return "#6366f1";
               default:
-                return "#64748b"; // slate
+                return "#64748b";
             }
           }}
           // We use the timer above instead of onEngineStop for speed

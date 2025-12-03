@@ -263,7 +263,7 @@ export default function HomePage() {
               engineering, and quantitative or FinTech analyst roles.
             </p>
             <Link
-              href="mailto:pboomhtsaengs3@gmail.com"
+              href="mailto:pboomhtsaengs1@gmail.com"
               className="inline-flex items-center text-sm font-medium underline underline-offset-4 hover:text-[#DDAA3B]"
             >
               Email me to discuss a role

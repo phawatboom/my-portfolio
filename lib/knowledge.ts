@@ -1,11 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { knowledgeNodes } from "@/data/knowledge-nodes";
 
 export type KnowledgeNode = {
   id: string;
   title: string;
-  slug: string;
+  slug?: string;
   category?: string;
   tags?: string[];
 };
@@ -45,67 +46,36 @@ export function getKnowledgeFiles(): RawKnowledgeFile[] {
 }
 
 /**
- * Builds the graph from MDX frontmatter.
- *
- * Each MDX needs at least:
- *  ---
- *  id: atr
- *  title: "Average True Range (ATR)"
- *  category: "Trading"
- *  slug: "average-true-range-atr"
- *  tags: ["volatility", "risk-management"]
- *  links:
- *    - to: cvd
- *      type: "used-with"
- *  ---
+ * Builds the graph from knowledge-nodes.ts
  */
 export function loadGraph(): { nodes: KnowledgeNode[]; edges: KnowledgeEdge[] } {
-  const files = getKnowledgeFiles();
+  const nodes: KnowledgeNode[] = knowledgeNodes.map((n) => ({
+    id: n.id,
+    title: n.title,
+    category: n.category,
+    slug: n.slug,
+  }));
 
-  const nodes: KnowledgeNode[] = [];
   const edges: KnowledgeEdge[] = [];
 
-  for (const f of files) {
-    const fm = f.frontmatter || {};
-
-    // Only treat files with an explicit id as graph nodes
-    if (!fm.id || !fm.title) continue;
-
-    nodes.push({
-      id: String(fm.id),
-      title: String(fm.title),
-      slug: fm.slug ? String(fm.slug) : f.slug,
-      category: fm.category ? String(fm.category) : undefined,
-      tags: Array.isArray(fm.tags) ? fm.tags.map(String) : undefined,
-    });
-
-    // Optional links → edges
-    // Allow either:
-    // links: ["cvd", "atr"]
-    // or
-    // links: [{ to: "cvd", type: "relates-to" }]
-    if (Array.isArray(fm.links)) {
-      for (const link of fm.links) {
-        if (typeof link === "string") {
-          edges.push({
-            fromId: String(fm.id),
-            toId: link,
-            type: "related",
-          });
-        } else if (link && typeof link === "object" && link.to) {
-          edges.push({
-            fromId: String(fm.id),
-            toId: String(link.to),
-            type: link.type ? String(link.type) : "related",
-          });
-        }
+  for (const node of knowledgeNodes) {
+    if (node.parentId) {
+      edges.push({
+        fromId: node.parentId,
+        toId: node.id,
+        type: "is-part-of",
+      });
+    }
+    if (node.relatedIds) {
+      for (const relatedId of node.relatedIds) {
+        edges.push({
+          fromId: node.id,
+          toId: relatedId,
+          type: "relates-to",
+        });
       }
     }
   }
 
-  // Filter out edges that point to non-existent nodes
-  const nodeIds = new Set(nodes.map((n) => n.id));
-  const validEdges = edges.filter((e) => nodeIds.has(e.toId));
-
-  return { nodes, edges: validEdges };
+  return { nodes, edges };
 }

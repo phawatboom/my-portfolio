@@ -104,7 +104,7 @@ export function SiteHeader() {
           {/* Desktop icons */}
           <div className="hidden items-center gap-4 text-slate-800 md:flex">
             <a
-              href="mailto:pboomhtsaengs3@gmail.com"
+              href="mailto:pboomhtsaengs1@gmail.com"
               aria-label="Email Phawat"
               className="hover:text-amber-700"
             >
@@ -198,7 +198,7 @@ export function SiteHeader() {
             </div>
             <div className="mt-1 flex gap-4 pb-1 text-slate-800">
               <a
-                href="mailto:pboomhtsaengs3@gmail.com"
+                href="mailto:pboomhtsaengs1@gmail.com"
                 aria-label="Email Phawat"
                 className="hover:text-amber-700"
               >

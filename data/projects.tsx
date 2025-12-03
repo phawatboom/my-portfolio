@@ -38,7 +38,7 @@ export const projects: Project[] = [
     year: 2025,
     domain: "ml",
     type: "University Capstone",
-    duration: "Feb 2025 - Present",
+    duration: "Jul - Nov 2025",
     techStack: ["Python", "Pandas", "Scikit-learn", "Next.js", "Django", "PostgreSQL"],
     tags: ["Mean reversion", "Factor models", "Time series", "Quantitative Finance"],
     impact:
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     year: 2025,
     domain: "ml",
     type: "Commercial Contract",
-    duration: "Jan 2025 - Mar 2025",
+    duration: "Jun 2025 - Present",
     category: "AI & skills intelligence",
     highlight: true,
     tags: ["NLP", "Embeddings", "Career tech"],
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     year: 2025,
     domain: "fullstack",
     type: "Volunteer / WDCC",
-    duration: "Jan 2025 - Present",
+    duration: "Jan - Nov 2025",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Payload CMS", "PostgreSQL", "AWS S3", "Fly.io"],
     tags: ["Full stack", "CMS", "Club website"],
     impact:
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     year: 2024,
     domain: "trading",
     type: "Competition",
-    duration: "Apr 2024",
+    duration: "Jun 2025",
     techStack: ["Python", "Pandas", "Backtesting framework"],
     tags: ["Market making", "Stat arb", "Trading"],
     impact:

@@ -52,7 +52,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What I build */}
+      {/* What I build
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">What I build</h2>
         <p className="text-sm text-gray-600 max-w-xl">
@@ -62,7 +62,7 @@ export default function AboutPage() {
           intelligence), and the <span className="font-medium">AUCC website
           rebuild</span> (real users, real content, production-quality engineering).
         </p>
-      </section>
+      </section> */}
 
       {/* How I learn and work */}
       <section className="space-y-4">
@@ -186,10 +186,10 @@ export default function AboutPage() {
         <p className="text-xs text-gray-600 pt-4">
           For roles in AI, software, or trading, reach me at{" "}
           <a
-            href="mailto:pboomhtsaengs3@gmail.com"
+            href="mailto:pboomhtsaengs1@gmail.com"
             className="text-[#DDAA3B] underline underline-offset-4 hover:text-[#C0922F]"
           >
-            pboomhtsaengs3@gmail.com
+            pboomhtsaengs1@gmail.com
           </a>
           .
         </p>
