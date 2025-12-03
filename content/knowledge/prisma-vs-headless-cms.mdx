@@ -1,0 +1,100 @@
+---
+id: "prisma-vs-headless-cms"
+title: "Prisma vs headless CMS for a knowledge graph"
+slug: "prisma-vs-headless-cms"
+category: "Web engineering"
+tags:
+  - "prisma"
+  - "headless-cms"
+  - "architecture"
+links:
+  - to: "knowledge-graph-storage"
+    type: "part-of"
+---
+
+# Prisma vs headless CMS for a knowledge graph
+
+**Prisma** is an ORM and schema layer.  
+**Headless CMS** is a **content product** on top of a database, plus infra and editing UI.
+
+You can build your knowledge graph both ways, but the trade offs are different.
+
+---
+
+## Flow with Prisma only
+
+### Data model
+
+- `Concept` table  
+- `ConceptLink` table  
+- Optional `Tag` table
+
+You own the schema and how concepts and edges are stored.
+
+### System flow
+
+- **Graph rendering**  
+  Next.js route (server component) → `prisma.concept.findMany()` + `prisma.conceptLink.findMany()` → build in-memory graph → render 3D visual.
+
+- **Concept page**  
+  `/knowledge/[slug]` → `prisma.concept.findUnique({ where: { slug } })` + its links → render node + neighbours.
+
+- **Editing**  
+  You build your own internal admin UI:  
+  form → API route → `prisma.concept.create/update()` → DB.
+
+### Pros
+
+- Maximum control over schema and queries  
+- Easy to integrate with other app features (auth, progress tracking, analytics)  
+- Simple to move or extend later
+
+### Trade offs
+
+- You must build:
+  - Forms and editor  
+  - Auth and roles  
+  - Drafts / versioning if you want them  
+- More upfront work if content volume becomes large
+
+---
+
+## Flow with a headless CMS
+
+A headless CMS is a **content layer over a database**:
+
+- Built-in admin UI  
+- Rich text, media, roles, drafts, versions  
+- You consume content via **REST or GraphQL** from Next.js
+
+### System flow
+
+- **Authoring**  
+  You in browser → CMS admin UI → create / edit concept + links → CMS writes to DB.
+
+- **Graph rendering**  
+  `/knowledge` → fetch all concepts and links via CMS API → build graph → 3D visual.
+
+- **Concept page**  
+  `/knowledge/[slug]` → fetch concept by slug + related concepts from CMS → render.
+
+### Pros
+
+- Polished editing UI on day one  
+- Content validation, version history, drafts, media uploads provided  
+- Good for **multi-user**, public/private nodes, collaboration
+
+### Trade offs
+
+- Tied to CMS data model and upgrade path  
+- Local development heavier than pure Prisma + Postgres  
+- Some constraints around how you query and shape content
+
+---
+
+## Summary
+
+- Use **Prisma only** if you want **maximum control** and are happy coding the editor.  
+- Use a **headless CMS** if you want **great UX for writing** and might support other users later.
+
+Your current phase (solo, file-first, personal brain) fits **files → Prisma later**, then a CMS only if you start collaborative or public knowledge work.

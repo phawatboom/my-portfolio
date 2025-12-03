@@ -1,0 +1,76 @@
+---
+id: atr
+slug: average-true-range-atr
+title: "Average True Range (ATR)"
+category: "Trading"
+tags:
+  - indicator
+  - volatility
+  - risk management
+links:
+  - to: cvd
+    type: used_with
+  - to: trading-position-sizing
+    type: influences
+  - to: trading-breakout-quality
+    type: influences
+---
+
+> ATR measures **how much price typically moves per bar**, based on recent volatility.  
+> It says nothing about direction, only **range**.
+
+## Essence
+
+- Volatility indicator, not a trend detector  
+- Built from **True Range (TR)** per bar  
+- Usually uses a 14-bar moving average of TR  
+- Higher ATR ⇒ higher volatility, wider swings
+
+## How ATR is calculated
+
+**True Range (TR) for each bar**
+
+Take the maximum of:
+
+- `high - low`
+- `|high - previous close|`
+- `|low - previous close|`
+
+**ATR**
+
+- ATR is a moving average of TR over a chosen period (often 14 bars)
+- As volatility rises, TR and ATR both increase  
+- When markets calm down, ATR contracts
+
+## What ATR tells you
+
+### 1. Volatility range
+
+- ATR ≈ “typical range per bar”
+- Helps you anchor expectations like “a normal bar recently is about _X_ points wide”
+
+### 2. Stop loss placement
+
+Common rule of thumb:
+
+- Long: stop at `entry - (1–2 × ATR)`
+- Short: stop at `entry + (1–2 × ATR)`
+
+This adapts the stop to **current volatility** instead of a fixed number of points.
+
+### 3. Position sizing
+
+Define **risk per trade** using ATR.
+
+- High ATR (wild market) ⇒ **reduce size**  
+- Low ATR (quiet market) ⇒ **you can take larger size for the same risk**
+
+### 4. Breakout strength
+
+- Breakout + **ATR spike** ⇒ move has **real volatility and participation**
+- Breakout with **flat / falling ATR** ⇒ more likely a fakeout or range noise
+
+### 5. Mean reversion vs trend timing
+
+- Long quiet periods with **low ATR** often come **before** big trend expansions  
+- Very high ATR often shows **late trend stress** or capitulation, where reversals or slowdowns become more likely
