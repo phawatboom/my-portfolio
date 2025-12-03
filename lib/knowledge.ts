@@ -17,9 +17,21 @@ export type KnowledgeEdge = {
   type: string;
 };
 
+type KnowledgeFrontmatter = {
+  id?: string;
+  title?: string;
+  slug?: string;
+  category?: string;
+  tags?: string[];
+  subtitle?: string;
+  summary?: string;
+  links?: (string | { to: string; type?: string })[];
+  [key: string]: unknown;
+};
+
 type RawKnowledgeFile = {
   slug: string;
-  frontmatter: any;
+  frontmatter: KnowledgeFrontmatter;
   content: string;
 };
 
