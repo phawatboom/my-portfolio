@@ -50,41 +50,54 @@ export function KnowledgeGraph({ data }: KnowledgeGraphProps) {
   }, []);
 
   useEffect(() => {
-    if (!hasInitialCentered && fgRef.current && data.nodes.length > 0) {
-      // wait a bit so the force layout fully stabilises
-      const timeoutId = setTimeout(() => {
-        fgRef.current?.zoomToFit(800, 280); // same settings as Recenter
+    // Force the graph to be "ready" quickly (600ms), don't wait for full physics stop
+    const timer = setTimeout(() => {
+      if (!hasInitialCentered && fgRef.current) {
+        fgRef.current.zoomToFit(0, 280); // Instant zoom
         setHasInitialCentered(true);
-      }, 700); // you can tweak this (500–900ms usually feels good)
-
-      return () => clearTimeout(timeoutId);
-    }
-  }, [hasInitialCentered, data.nodes.length]);
+      }
+    }, 600);
+    
+    return () => clearTimeout(timer);
+  }, [hasInitialCentered]);
 
   return (
     <div className="relative w-full h-[640px]">
-      <ForceGraph3D
-        ref={fgRef}
-        graphData={data}
-        backgroundColor="#f8fafc"
-        nodeRelSize={6}
-        nodeOpacity={1}
-        enableNodeDrag={true}
-        nodeLabel={(node: object) => (node as GraphNode).label}
-        nodeColor={(node: object) => {
-          const n = node as GraphNode;
-          switch (n.category) {
-            case "Trading":
-              return "#0f766e"; // teal
-            case "Career":
-              return "#f59e0b"; // amber
-            case "Life":
-              return "#6366f1"; // indigo
-            default:
-              return "#64748b"; // slate
-          }
-        }}
-        onNodeClick={(node: object) => {
+      {/* Loading overlay */}
+      {!hasInitialCentered && (
+        <div className="absolute inset-0 flex items-center justify-center text-xs text-slate-400 z-10 pointer-events-none">
+          Arranging nodes…
+        </div>
+      )}
+
+      <div
+        className={`w-full h-full transition-opacity duration-500 ${
+          hasInitialCentered ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <ForceGraph3D
+          ref={fgRef}
+          graphData={data}
+          backgroundColor="#f8fafc"
+          nodeRelSize={6}
+          nodeOpacity={1}
+          enableNodeDrag={true}
+          nodeLabel={(node: object) => (node as GraphNode).label}
+          nodeColor={(node: object) => {
+            const n = node as GraphNode;
+            switch (n.category) {
+              case "Trading":
+                return "#0f766e"; // teal
+              case "Career":
+                return "#f59e0b"; // amber
+              case "Life":
+                return "#6366f1"; // indigo
+              default:
+                return "#64748b"; // slate
+            }
+          }}
+          // We use the timer above instead of onEngineStop for speed
+          onNodeClick={(node: object) => {
           const n = node as GraphNode;
           if (n.slug) {
             router.push(`/knowledge/${n.slug}`);
@@ -104,6 +117,7 @@ export function KnowledgeGraph({ data }: KnowledgeGraphProps) {
         }}
         nodeThreeObjectExtend={true}
       />
+      </div>
 
       {/* Controls Overlay */}
       <div className="absolute bottom-4 right-4 flex flex-col gap-2 items-end pointer-events-none">
