@@ -23,6 +23,10 @@ export type Course = {
   tags: string[];
   artefacts: CourseArtefact[];
   grade?: "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "Pass";
+  slug?: string;
+  overviewShort?: string;
+  overviewLong?: string;
+  knowledgeNodeIds?: string[];
 };
 
 // helper so you can visually see featured courses first if you want to sort later
@@ -364,6 +368,30 @@ export const courses: Course[] = [
     discipline: "Computer Science",
     featured: true,
     grade: "A",
+    description:
+      "A rigorous introduction to machine learning. I learned how models generalise, how to evaluate them correctly, and implemented decision-tree classifiers from scratch using entropy, information gain, and pruning.",
+    slug: "compsci-361-machine-learning",
+    overviewShort:
+      "Rigorous introduction to machine learning with a focus on generalisation, evaluation, and decision-tree methods implemented from scratch.",
+    overviewLong:
+      "I learned how supervised models generalise beyond the training data, how to evaluate them correctly with metrics like precision, recall, F1 and confusion matrices, and how to implement decision-tree classifiers using entropy, information gain, and pruning. The course also emphasised the bias–variance tradeoff, overfitting and underfitting, and the use of validation and cross validation to choose hyperparameters without contaminating the test set.",
+    knowledgeNodeIds: [
+      "quant.supervised-learning",
+      "quant.decision-trees",
+      "quant.decision-stumps",
+      "quant.entropy",
+      "quant.information-gain",
+      "quant.pruning",
+      "quant.generalisation-error",
+      "quant.overfitting",
+      "quant.underfitting",
+      "quant.bias-variance",
+      "quant.confusion-matrix",
+      "quant.precision-recall",
+      "quant.f1-score",
+      "quant.cross-validation",
+      "quant.hyperparameters",
+    ],
     keyTopics: [],
     tags: [],
     artefacts: [],
@@ -376,6 +404,25 @@ export const courses: Course[] = [
     discipline: "Finance",
     featured: true,
     grade: "A-",
+    slug: "finance-261-introduction-to-investments",
+    overviewShort:
+      "Foundational investments course covering asset classes, markets, trading mechanics, risk and return, portfolio theory, and CAPM.",
+    overviewLong:
+      "I learned about the investment decision process, different asset classes including money market instruments, bonds, and equities. The course covered trading mechanics like margin and short selling, and the calculation of returns and indices. A major focus was on modern portfolio theory, including diversification, the efficient frontier, and the CAPM model for pricing risk.",
+    knowledgeNodeIds: [
+      "fin261.investment-basics",
+      "fin261.money-market-overview",
+      "fin261.bond-price-and-yield",
+      "fin261.stock-market-indexes",
+      "fin261.trading-mechanics",
+      "fin261.buying-on-margin",
+      "fin261.discrete-holding-period-return",
+      "fin261.portfolio-expected-return",
+      "fin261.beta-definition",
+      "fin261.capm-sml",
+      "fin261.mutual-funds",
+      "fin261.esg-investing-overview",
+    ],
     keyTopics: [],
     tags: [],
     artefacts: [],
@@ -388,6 +435,35 @@ export const courses: Course[] = [
     discipline: "Finance",
     featured: true,
     grade: "A-",
+    slug: "finance-351-corporate-finance",
+    overviewShort:
+      "Advanced corporate finance focused on valuation, cost of capital, capital structure, payout policy, and international financial management.",
+    overviewLong:
+      "I learned how to value companies and projects using free cash flow, enterprise value, dividend discount models, and comparables, and how to connect these to capital budgeting decisions. The course covered cost of capital estimation with CAPM and betas, capital structure theories and the tradeoff between tax shields and distress costs, payout policies and taxation, exchange rates and covered interest parity, and valuation of international projects, IPOs, and mergers and acquisitions.",
+    knowledgeNodeIds: [
+      "fin.free-cash-flow",
+      "fin.enterprise-value",
+      "fin.equity-value",
+      "fin.net-debt",
+      "fin.dcf",
+      "fin.ddm",
+      "fin.market-multiples",
+      "fin.cost-of-capital",
+      "fin.capm",
+      "fin.levered-beta",
+      "fin.unlevered-beta",
+      "fin.wacc",
+      "fin.exchange-rates",
+      "fin.covered-interest-parity",
+      "fin.international-capital-budgeting",
+      "fin.mm-propositions",
+      "fin.trade-off-theory",
+      "fin.pecking-order-theory",
+      "fin.payout-policy",
+      "fin.ipo-pricing",
+      "fin.m-and-a",
+      "fin.eps-accretion-dilution",
+    ],
     keyTopics: [],
     tags: [],
     artefacts: [],

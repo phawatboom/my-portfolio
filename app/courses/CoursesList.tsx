@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { courses, type Course } from "@/data/courses";
 import {
   Card,
@@ -169,10 +170,46 @@ export default function CoursesList() {
             {/* Overview / description (placeholder safe) */}
             <div>
               <h4 className="text-sm font-semibold mb-2">Overview</h4>
-              <p className="text-sm text-gray-700">
-                {selectedCourse?.description ??
+              <p className="text-sm text-gray-700 leading-relaxed">
+                {selectedCourse?.overviewLong ??
+                  selectedCourse?.description ??
                   "Short course description placeholder. You can summarise what the course focused on and what you gained from it."}
               </p>
+
+              {/* Deep Dive Links */}
+              {(selectedCourse?.slug ||
+                (selectedCourse?.knowledgeNodeIds &&
+                  selectedCourse.knowledgeNodeIds.length > 0)) && (
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {selectedCourse.slug && (
+                    <Link href={`/courses/${selectedCourse.slug}`}>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-xs h-8"
+                      >
+                        View full course page
+                      </Button>
+                    </Link>
+                  )}
+                  {selectedCourse.knowledgeNodeIds &&
+                    selectedCourse.knowledgeNodeIds.length > 0 && (
+                      <Link
+                        href={`/knowledge?highlight=${selectedCourse.knowledgeNodeIds.join(
+                          ","
+                        )}`}
+                      >
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="text-xs h-8 bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 hover:text-blue-800"
+                        >
+                          View knowledge graph
+                        </Button>
+                      </Link>
+                    )}
+                </div>
+              )}
             </div>
 
             {/* Topics */}

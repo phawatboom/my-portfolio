@@ -46,14 +46,14 @@ export function KnowledgeGraph({ data }: KnowledgeGraphProps) {
     if (!fg) return;
 
     // duration (ms), padding (px)
-    fg.zoomToFit(800, 280);
+    fg.zoomToFit(800, 90);
   }, []);
 
   useEffect(() => {
     // Force the graph to be "ready" quickly (600ms), don't wait for full physics stop
     const timer = setTimeout(() => {
       if (!hasInitialCentered && fgRef.current) {
-        fgRef.current.zoomToFit(0, 280); // Instant zoom
+        fgRef.current.zoomToFit(0, 90); // Instant zoom
         setHasInitialCentered(true);
       }
     }, 600);

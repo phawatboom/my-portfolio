@@ -1,0 +1,72 @@
+---
+id: compsci-361
+title: COMPSCI 361 — Machine Learning
+grade: A
+semester: 2025 Semester One
+summary: "A rigorous introduction to machine learning. I learned how models generalise, how to evaluate them correctly, and implemented decision-tree classifiers from scratch using entropy, information gain, and pruning."
+---
+
+## What the Course Covered
+This course introduced the core principles of machine learning with a focus on how models learn from data, how they generalise, and how to evaluate them rigorously. The emphasis was on understanding model behaviour, not memorising algorithms, which aligned well with my interest in building reliable ML systems.
+
+We covered:
+- Supervised vs unsupervised learning
+- Decision trees and decision stumps
+- Entropy, information gain, and greedy splitting
+- Stopping criteria and pruning
+- Overfitting, underfitting, and generalisation error
+- Bias–variance tradeoff
+- Evaluation metrics: accuracy, precision, recall, F1, confusion matrix
+- Train/validation/test splits, cross-validation, and the golden rule of ML
+
+---
+
+## Key Things I Learned
+### 1. How models actually generalise  
+I learned that lowering training error does not mean the model is good. Generalisation depends on model complexity, data distribution, and how well the model balances bias and variance.
+
+### 2. How to evaluate ML models properly  
+I now understand when to use accuracy, precision, recall, F1, or false-positive rate, and why the confusion matrix is the foundation of almost all evaluation metrics.
+
+### 3. How decision trees work under the hood  
+I implemented a full decision-tree classifier in Python:
+- computed entropy from label distributions  
+- computed information gain for each candidate split  
+- recursively grew the tree  
+- applied pruning to avoid overfitting  
+
+### 4. The importance of clean evaluation pipelines  
+I gained a deeper respect for the golden rule of ML:  
+**never let the test set influence model selection.**  
+This changed how I design experiments in my own projects (Capital Compass, trading models, Worklaunch ML components).
+
+---
+
+## Practical Work
+### **Decision Tree Implementation**
+I built a working classifier using:
+- Python  
+- JupyterLab  
+- Numpy / pandas  
+- Custom entropy & information-gain routines  
+
+This helped me understand how library implementations like scikit-learn work internally.
+
+### **Evaluation and Error Analysis**
+We ran manual calculations for:
+- entropy  
+- conditional entropy  
+- information gain  
+- confusion matrices  
+- precision/recall/F1  
+
+This built strong intuition for why certain models fail or succeed.
+
+---
+
+## How I Apply This Today
+This course heavily shapes how I evaluate and design models in:
+- my quant trading research  
+- my Worklaunch skill-classification pipeline  
+- my own ML experiments (forecasting, LLM evaluation, etc.)  
+It also built the foundation for more advanced topics like ensemble methods, optimisation, and statistical forecasting.
