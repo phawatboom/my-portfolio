@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | Phawat",
@@ -27,28 +28,15 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Photo / visual placeholder */}
-        <div className="h-48 md:h-64 rounded-3xl border bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 relative overflow-hidden shadow-sm">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#DDAA3B,_transparent_55%)] opacity-60" />
-          <div className="relative h-full w-full flex items-end justify-start p-4">
-            <p className="text-xs text-gray-200 max-w-[80%]">
-              Placeholder for a portrait or lifestyle photo. Swap this block for
-              a{" "}
-              <span className="font-mono text-[11px]">
-                &lt;Image /&gt;
-              </span>{" "}
-              component when you have one.
-            </p>
-          </div>
-          {/* Example when you are ready:
+        {/* Photo */}
+        <div className="h-48 md:h-64 rounded-3xl border bg-gray-100 relative overflow-hidden shadow-sm">
           <Image
-            src="/me.jpg"
+            src="https://phawat-portfolio-assets.s3.ap-southeast-1.amazonaws.com/me.jpg"
             alt="Phawat"
             fill
             className="object-cover"
             priority
           />
-          */}
         </div>
       </section>
 

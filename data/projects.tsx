@@ -21,6 +21,7 @@ export type Project = {
   status?: string;
   highlight: boolean; // true = show on home page
   relatedCourses?: string[]; // e.g. ["COMPSCI 335", "FINANCE 251"]
+  image?: string; // S3 URL for thumbnail
   links: {
     github?: string;
     demo?: string;
@@ -47,6 +48,7 @@ export const projects: Project[] = [
       "Capital Compass is a suite of quantitative tools designed to analyze stock market behaviors, specifically focusing on mean reversion and beta forecasting. The project leverages ElasticNet regression models to predict stock beta and identify mean-reverting tendencies. A comprehensive web dashboard, built with Next.js and Django, allows users to interactively explore these signals, providing insights into potential mispricings and risk factors. The system integrates data processing pipelines using Pandas and Scikit-learn, backed by a PostgreSQL database for robust data management.",
     highlight: true,
     relatedCourses: ["FINANCE 361", "COMPSCI 361"],
+    image: "https://phawat-portfolio-assets.s3.ap-southeast-1.amazonaws.com/skye-old-man-of-storr-hike-01.jpg",
     links: {
       github: "https://github.com/phawatboom/mean-reversion-stock-prediciton-algorithm",
       demo: "http://3.104.120.14/",
@@ -75,6 +77,7 @@ export const projects: Project[] = [
       "How to design and populate a skills and occupation graph using embeddings; how to build production-ready ETL pipelines around ESCO; and how to work with a client under a contract while keeping the system maintainable and extensible.",
     techStack: ["Python", "Flask or FastAPI", "NLP", "PostgreSQL", "Qdrant"],
     status: "Internal tool · confidential",
+    image: "https://phawat-portfolio-assets.s3.ap-southeast-1.amazonaws.com/skye-cliff-green-hills-01.jpg",
     links: {
       // no public links, or leave out entirely
     },
@@ -97,6 +100,7 @@ export const projects: Project[] = [
       "The AUCC website serves as the digital hub for Auckland University's paddling community. It features event management for upcoming trips and registrations, community-generated trip reports with photo galleries, comprehensive river guides, and member profiles. The project uses a modern tech stack with Next.js 15 (App Router) on the frontend, Payload CMS 3.0 for headless content management, and Neon Postgres for the database. Infrastructure is managed via Terraform on AWS (S3 + CloudFront) and deployed to Fly.io. As Tech Lead, I guided a team of 8 developers and a designer to deliver a production-grade system with comprehensive documentation and handover processes.",
     highlight: true,
     relatedCourses: ["COMPSCI 335"],
+    image: "https://phawat-portfolio-assets.s3.ap-southeast-1.amazonaws.com/skye-coastal-village-view-01.jpg",
     links: {
       github: "https://github.com/UoaWDCC/aucc",
       demo: "https://aucc-staging.fly.dev/",
@@ -156,6 +160,7 @@ export const projects: Project[] = [
       "Kitchen Intelligence is an end-to-end AI-driven household meal planning system designed to make weekly food planning simple, healthy, cost-efficient, and personalised. It combines deterministic optimisation, nutritional modelling, and LLM-powered assistants to generate realistic plans that households can actually cook. The planner builds lunch and dinner plans around a household’s preferences, equipment, location, and budget, using real ingredient prices to estimate cost per meal and weekly totals. Each recipe is scored for calories, protein, and macro balance, and tagged with labels like high protein or low carb so users can quickly understand the health trade-offs. On top of the structured planner, an LLM layer explains plan choices in friendly language, adapts recipes on request (for example vegetarian, microwave-only, or lower-cost versions), and can suggest similar substitutions when users want to swap meals. A dedicated cook mode then walks users through recipes step by step on desktop or mobile, so the system covers the full journey from planning to cooking.",
     highlight: true,
     relatedCourses: ["COMPSCI 335", "COMPSCI 361"],
+    image: "https://phawat-portfolio-assets.s3.ap-southeast-1.amazonaws.com/skye-old-man-of-storr-hike-view1.jpg",
     links: {
       github: "https://github.com/phawatboom/kitchen-intelligence",
     },

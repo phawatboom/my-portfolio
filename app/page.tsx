@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "../data/projects";
 
 export const metadata: Metadata = {
@@ -17,24 +18,25 @@ export default function HomePage() {
       <header className="grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-10 items-center pt-10">
         {/* Left: narrative */}
         <div className="space-y-5">
-          <p className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-gray-500">
-            <span className="h-[1px] w-6 bg-gray-400" />
-            Finance × Computer Science
-          </p>
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-            Building cool, analytical products
-            <span className="block text-gray-500 text-2xl md:text-3xl mt-2">
-              where code, markets, and AI meet.
-            </span>
-          </h2>
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+            Phawat Saengsiripongpun
+          </h1>
 
-          <p className="text-sm text-gray-600 max-w-xl">
-            Most of my focus is on three highlighted projects:{" "}
-            <span className="font-medium">Capital Compass</span> (quant and beta
-            forecasting), <span className="font-medium">WorkLaunch</span> (AI career
-            intelligence), and the <span className="font-medium">AUCC website
-            rebuild</span> (real users, real content, production-quality engineering).
+          <p className="text-lg md:text-xl text-gray-600 font-medium mt-2">
+            AI Engineer · Software Engineer · Quant Developer
           </p>
+
+          <p className="text-sm text-gray-600 max-w-xl mt-3">
+            I build data-driven systems that turn noise into decisions. Recent work
+            includes multi-horizon stock forecasting, a full-stack career intelligence
+            engine, and the AUCC production rebuild.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-3 pt-5 text-xs text-gray-700">
+            <span className="px-3 py-1 rounded-full bg-white border shadow-sm">Machine learning & LLMs</span>
+            <span className="px-3 py-1 rounded-full bg-white border shadow-sm">Quant & trading systems</span>
+            <span className="px-3 py-1 rounded-full bg-white border shadow-sm">Full stack engineering</span>
+          </div>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link
@@ -49,18 +51,6 @@ export default function HomePage() {
             >
               Learn more about me
             </Link>
-          </div>
-
-          <div className="flex flex-wrap gap-3 text-xs text-gray-600 pt-4">
-            <span className="px-3 py-1 rounded-full bg-white shadow-sm border">
-              Quant & trading systems
-            </span>
-            <span className="px-3 py-1 rounded-full bg-white shadow-sm border">
-              AI and LLM tools
-            </span>
-            <span className="px-3 py-1 rounded-full bg-white shadow-sm border">
-              Valuation & finance
-            </span>
           </div>
         </div>
 
@@ -155,8 +145,19 @@ export default function HomePage() {
               className="group flex flex-col rounded-2xl bg-white border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               {/* Visual placeholder – later replace with real thumb */}
-              <div className="h-28 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 relative">
-                <div className="absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity bg-[radial-gradient(circle_at_top,_#DDAA3B,_transparent_55%)]" />
+              <div className="h-28 relative bg-gray-900">
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+                    <div className="absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity bg-[radial-gradient(circle_at_top,_#DDAA3B,_transparent_55%)]" />
+                  </div>
+                )}
               </div>
               <div className="flex-1 flex flex-col p-4 gap-2">
                 <div className="flex items-center justify-between gap-2">
