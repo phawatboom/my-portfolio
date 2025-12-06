@@ -100,7 +100,7 @@ export const projects: Project[] = [
       "The AUCC website serves as the digital hub for Auckland University's paddling community. It features event management for upcoming trips and registrations, community-generated trip reports with photo galleries, comprehensive river guides, and member profiles. The project uses a modern tech stack with Next.js 15 (App Router) on the frontend, Payload CMS 3.0 for headless content management, and Neon Postgres for the database. Infrastructure is managed via Terraform on AWS (S3 + CloudFront) and deployed to Fly.io. As Tech Lead, I guided a team of 8 developers and a designer to deliver a production-grade system with comprehensive documentation and handover processes.",
     highlight: true,
     relatedCourses: ["COMPSCI 335"],
-    image: "https://phawat-portfolio-assets.s3.ap-southeast-1.amazonaws.com/skye-coastal-village-view-01.jpg",
+    image: "https://phawat-portfolio-assets.s3.ap-southeast-1.amazonaws.com/aucc-homepage.png",
     links: {
       github: "https://github.com/UoaWDCC/aucc",
       demo: "https://aucc-staging.fly.dev/",

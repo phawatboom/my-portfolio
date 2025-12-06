@@ -31,7 +31,7 @@ export default function AboutPage() {
         {/* Photo */}
         <div className="h-48 md:h-64 rounded-3xl border bg-gray-100 relative overflow-hidden shadow-sm">
           <Image
-            src="https://phawat-portfolio-assets.s3.ap-southeast-1.amazonaws.com/me.jpg"
+            src="https://phawat-portfolio-assets.s3.ap-southeast-1.amazonaws.com/skye-old-man-of-storr-hike-02.jpg"
             alt="Phawat"
             fill
             className="object-cover"
